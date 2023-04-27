@@ -23,7 +23,11 @@
 		"import/extensions": [
 			".ts",
 			".tsx"
-		]
+		],
+		"import/resolver": {
+			"typescript": true,
+    	"node": true
+		}
 	},
 	"rules": {
 		"import/order": [
@@ -39,7 +43,9 @@
 					"object",
 					"type"
 				],
-				"newlines-between": "always-and-inside-groups"
+				"newlines-between": "always-and-inside-groups",
+				"alphabetize": {"order": "asc", "caseInsensitive": true},
+				"warnOnUnassignedImports": true
 			}
 		],
 		"indent": ["error", "tab"],
@@ -47,6 +53,7 @@
 		"quotes": ["error", "single"],
 		"semi": ["error", "always"],
 		"eol-last": "error",
-		"complexity": ["error", 4]
+		"complexity": ["error", 4],
+		"max-len": ["error", 90]
 	}
 }
