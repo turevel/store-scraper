@@ -1,3 +1,5 @@
+import router from './routes/routes';
+
 import cors from 'cors';
 import express from 'express';
 
@@ -16,7 +18,7 @@ class App {
 	}
 
 	private routes() {
-		// Implementar
+		this.app.use(router);
 	}
 
 	public start(port: number) {
