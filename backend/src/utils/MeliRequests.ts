@@ -7,19 +7,19 @@ import MeliExtractor from './MeliExtractor';
 
 class MeliRequests extends AbsRequests {
 	public static async getSmartphones() {
-		// const { data } = await MeliRequests.req.get(SMARTPHONES_URL););
+		// const data = await MeliRequests.makeRequest(SMARTPHONES_URL);
 		const data = MeliRequests.readMock('MELI-smartphones.html');
 		return MeliExtractor.extract(data.toString());
 	}
 
 	public static async getRefrigerators() {
-		// const { data } = await MeliRequests.req.get(REFRIGERATORS_URL);
+		// const data = await MeliRequests.makeRequest(REFRIGERATORS_URL);
 		const data = MeliRequests.readMock('MELI-refrigerators.html');
 		return MeliExtractor.extract(data.toString());
 	}
 
 	public static async getTvs() {
-		// const { data } = await MeliRequests.req.get(TVS_URL);
+		// const data = await MeliRequests.makeRequest(TVS_URL);
 		const data = MeliRequests.readMock('MELI-tvs.html');
 		return MeliExtractor.extract(data.toString());
 	}
