@@ -2,9 +2,9 @@ import { DefaultTheme } from 'styled-components';
 
 export const light: DefaultTheme = {
 	colors: {
-		accentPrimary: '#D84315',
-		accentSecondary: '#E64A19',
-		accentTertiary: '#F4511E',
+		accentPrimary: '#00838F',
+		accentSecondary: '#0097A7',
+		accentTertiary: '#00ACC1',
 		background: '#ffffff',
 		primary: '#fafafa',
 		secondary: '#f5f5f5',
