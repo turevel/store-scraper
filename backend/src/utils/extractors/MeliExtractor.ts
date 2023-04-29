@@ -30,7 +30,8 @@ class MeliExtractor extends AbstractExtractor {
 					.normalizeString(el.find(ITEM_LINK_QUERY).attr('href') || ''),
 
 				price: MeliExtractor
-					.normalizeString(el.find(ITEM_PRICE_QUERY).first().text()),
+					.normalizeString(el.find(ITEM_PRICE_QUERY).first().text())
+					.replace('R$', 'R$ '),
 
 				company: 'Mercado Livre' }
 			);
