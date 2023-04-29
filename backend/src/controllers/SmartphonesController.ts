@@ -1,6 +1,5 @@
-import AbstractController from '../abstract/AbstractController';
-
-import SmartphonesService from '../services/SmartphonesService';
+import { AbstractController } from '../abstract';
+import { SmartphonesService } from '../services';
 
 import { Request, Response } from 'express';
 

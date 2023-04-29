@@ -1,4 +1,4 @@
-import SmartphonesController from '../controllers/SmartphonesController';
+import { SmartphonesController } from '../controllers';
 
 import express from 'express';
 

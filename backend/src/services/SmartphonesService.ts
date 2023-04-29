@@ -1,12 +1,11 @@
-import AbstractSmartphonesService, { Companies } from '../abstract/AbstractService';
+import { AbstractService } from '../abstract';
+import Companies from '../types/Companies';
+import { BothRequests, BuscapeRequests, MeliRequests } from '../utils/requests/';
 
-import BuscapeRequests from '../utils/requests/BuscapeRequests';
-import MeliRequests from '../utils/requests/MeliRequests';
-
-class SmartphonesService extends AbstractSmartphonesService {
+class SmartphonesService extends AbstractService {
 	private static async configureExec() {
 		SmartphonesService.exec = {
-			both: BuscapeRequests.getSmartphones,
+			both: BothRequests.getSmartphones,
 			meli: MeliRequests.getSmartphones,
 			buscape: BuscapeRequests.getSmartphones,
 		};
@@ -14,7 +13,6 @@ class SmartphonesService extends AbstractSmartphonesService {
 
 	public static async get(company: Companies) {
 		SmartphonesService.configureExec();
-		console.log(company);
 		return SmartphonesService.exec[company]();
 	}
 }
