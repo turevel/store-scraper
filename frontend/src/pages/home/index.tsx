@@ -1,6 +1,7 @@
 import * as sc from './styles';
 
 import Loading from '../../components/loading';
+import ProductsArea from '../../components/products-area';
 import SearchArea from '../../components/search-area';
 
 import { RequestContext } from '../../provider/RequestProvider';
@@ -13,7 +14,11 @@ function Home() {
 	return (
 		<sc.Main>
 			<SearchArea />
-			{ loading && <Loading /> }
+			{
+				loading
+					? <Loading />
+					: <ProductsArea />
+			}
 		</sc.Main>
 	);
 }
