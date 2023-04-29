@@ -16,7 +16,6 @@ export const Logo = styled.h1`
 `;
 
 export const SearchContainer = styled.section`
-  background-color: green;
   position: absolute;
   bottom: 0;
   left: 50%;

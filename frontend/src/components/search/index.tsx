@@ -1,6 +1,19 @@
+import * as sc from './styles';
+
+import { BiSearch } from 'react-icons/bi';
+
 function Search() {
 	return (
-		<p>Search</p>
+		<sc.Container>
+			<sc.Input
+				placeholder="Digite um termo de busca..."
+				type="input"
+			/>
+
+			<sc.Submit type="button">
+				<BiSearch className="icon" />
+			</sc.Submit>
+		</sc.Container>
 	);
 }
 
