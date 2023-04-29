@@ -1,6 +1,5 @@
 import IProduct from '../interfaces/IProducts';
-
-export type Companies = 'meli' | 'buscape' | 'both';
+import Companies from '../types/Companies';
 
 export interface IExec {
   both: () => Promise<IProduct[]>,
@@ -11,7 +10,12 @@ export interface IExec {
 export default abstract class AbstractSmartphonesService {
 	protected static exec: IExec;
 
-	public static async get(_company: Companies): Promise<IProduct[]> {
+	protected static configureExec() {
 		throw new Error('Not implemented');
+	}
+
+	public static async get(company: Companies) {
+		AbstractSmartphonesService.configureExec();
+		return AbstractSmartphonesService.exec[company]();
 	}
 }
