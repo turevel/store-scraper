@@ -1,7 +1,9 @@
+import ProductCard from '../product-card';
+
 function ProductsArea() {
 	return (
 		<ul>
-      Lista de products
+			<ProductCard />
 		</ul>
 	);
 }
