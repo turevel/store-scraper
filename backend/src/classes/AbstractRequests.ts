@@ -5,7 +5,6 @@ import axios from 'axios';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 
-
 export default abstract class AbstractRequests {
 	protected static readMock(filename: string) {
 		return readFileSync(resolve(__dirname, '..', 'mocks', filename));
