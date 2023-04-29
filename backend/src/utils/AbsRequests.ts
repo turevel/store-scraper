@@ -1,3 +1,5 @@
+import IProduct from '../interfaces/IProducts';
+
 import axios from 'axios';
 
 import { readFileSync } from 'fs';
@@ -12,15 +14,15 @@ export default abstract class AbsRequests {
 		return (await axios.get(url)).data;
 	}
 
-	public static getSmartphones() {
+	public static async getSmartphones(): Promise<IProduct[]> {
 		throw new Error('Not implemented');
 	}
 
-	public static getRefrigerators() {
+	public static async getRefrigerators(): Promise<IProduct[]> {
 		throw new Error('Not implemented');
 	}
 
-	public static getTvs() {
+	public static async getTvs(): Promise<IProduct[]> {
 		throw new Error('Not implemented');
 	}
 }
