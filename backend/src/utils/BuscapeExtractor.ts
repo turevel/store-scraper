@@ -25,11 +25,12 @@ class BuscapeExtractor extends AbstractExtractor {
 				.loader(el.find(`${ITEM_IMAGE_QUERY} noscript`).text()).attr('src');
 
 			data.push({
-				image: noScriptImage || el.find(ITEM_IMAGE_QUERY).attr('src') || '',
+				image: noScriptImage
+					|| el.find(`${ITEM_IMAGE_QUERY} img`).attr('src') || '',
 				title: BuscapeExtractor.normalizeString(el.find(ITEM_NAME_QUERY).text()),
 				link: `${BUSCAPE}${el.find(ITEM_LINK_QUERY).attr('href') || ''}`,
 				price: BuscapeExtractor.normalizeString(el.find(ITEM_PRICE_QUERY).text()),
-				font: 'Buscapé',
+				company: 'Buscapé',
 			});
 		});
 

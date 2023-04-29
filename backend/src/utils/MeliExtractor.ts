@@ -33,7 +33,7 @@ class MeliExtractor extends AbstractExtractor {
 				price: MeliExtractor
 					.normalizeString(el.find(ITEM_PRICE_QUERY).first().text()),
 
-				font: 'Mercado Livre' }
+				company: 'Mercado Livre' }
 			);
 		});
 

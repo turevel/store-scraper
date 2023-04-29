@@ -3,7 +3,7 @@ interface IProduct {
   title: string;
   link: string;
   price: string;
-	font: string;
+	company: string;
 }
 
 export default IProduct;
