@@ -1,5 +1,4 @@
-import AbstractExtractor from '../../abstract/AbstractExtractor';
-
+import { AbstractExtractor } from '../../abstract';
 import IProduct from '../../interfaces/IProducts';
 
 const BUSCAPE = 'https://www.buscape.com.br';

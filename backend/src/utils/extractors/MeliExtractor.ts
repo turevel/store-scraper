@@ -1,5 +1,4 @@
-import AbstractExtractor from '../../abstract/AbstractExtractor';
-
+import { AbstractExtractor } from '../../abstract';
 import IProduct from '../../interfaces/IProducts';
 
 const MAIN_CONTENT_QUERY = '.ui-search-results.shops__search-results';
