@@ -7,13 +7,14 @@ import { useContext } from 'react';
 import { FaSpider } from 'react-icons/fa';
 
 function SearchArea() {
-	const { loading } = useContext(RequestContext);
+	const { loading, data } = useContext(RequestContext);
 
 	return (
 		<sc.Container
 			style={
 				{
-					height: loading ? '160px' : 'calc(50% - 20px)',
+					height: loading || data.length > 0
+						? '160px' : 'calc(50% - 20px)',
 				}
 			}
 		>

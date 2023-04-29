@@ -7,6 +7,7 @@ export const Container = styled.div`
   place-items: center;
   position: relative;
   transition: height ease-in-out 200ms;
+  flex-shrink: 0;
 `;
 
 export const SearchContainer = styled.section`
