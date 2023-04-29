@@ -1,9 +1,9 @@
 import AbstractRequests from './AbstractRequests';
 import MeliExtractor from './MeliExtractor';
 
-// SMARTPHONES_URL = 'https://lista.mercadolivre.com.br/celular';
-// REFRIGERATORS_URL = 'https://lista.mercadolivre.com.br/geladeira';
-// TVS_URL = 'https://lista.mercadolivre.com.br/tv';
+// const SMARTPHONES_URL = 'https://lista.mercadolivre.com.br/celular';
+// const REFRIGERATORS_URL = 'https://lista.mercadolivre.com.br/geladeira';
+// const TVS_URL = 'https://lista.mercadolivre.com.br/tv';
 
 class MeliRequests extends AbstractRequests {
 	public static async getSmartphones() {
