@@ -1,5 +1,5 @@
-import AbstractRequests from './AbstractRequests';
-import MeliExtractor from './MeliExtractor';
+import AbstractRequests from '../../abstract/AbstractRequests';
+import MeliExtractor from '../extractors/MeliExtractor';
 
 // const SMARTPHONES_URL = 'https://lista.mercadolivre.com.br/celular';
 // const REFRIGERATORS_URL = 'https://lista.mercadolivre.com.br/geladeira';

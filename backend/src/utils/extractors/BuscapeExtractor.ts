@@ -1,6 +1,6 @@
-import AbstractExtractor from './AbstractExtractor';
+import AbstractExtractor from '../../abstract/AbstractExtractor';
 
-import IProduct from '../interfaces/IProducts';
+import IProduct from '../../interfaces/IProducts';
 
 const BUSCAPE = 'https://www.buscape.com.br';
 const MAIN_CONTENT_QUERY = '[data-testid="hits"]';

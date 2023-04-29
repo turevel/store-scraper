@@ -1,6 +1,6 @@
-import AbstractExtractor from './AbstractExtractor';
+import AbstractExtractor from '../../abstract/AbstractExtractor';
 
-import IProduct from '../interfaces/IProducts';
+import IProduct from '../../interfaces/IProducts';
 
 const MAIN_CONTENT_QUERY = '.ui-search-results.shops__search-results';
 const ITEMS_QUERY = '.ui-search-layout__item';

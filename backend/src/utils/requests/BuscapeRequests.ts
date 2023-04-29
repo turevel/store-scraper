@@ -1,5 +1,5 @@
-import AbstractRequests from './AbstractRequests';
-import BuscapeExtractor from './BuscapeExtractor';
+import AbstractRequests from '../../abstract/AbstractRequests';
+import BuscapeExtractor from '../extractors/BuscapeExtractor';
 
 // const SMARTPHONES_URL = 'https://www.buscape.com.br/celular';
 // const REFRIGERATORS_URL = 'https://www.buscape.com.br/geladeira';
