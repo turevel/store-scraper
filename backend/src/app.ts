@@ -1,3 +1,7 @@
+// eslint-disable-next-line import/order
+import 'express-async-errors';
+
+import handleError from './middlewares/handleError';
 import routes from './routes';
 
 import cors from 'cors';
@@ -19,6 +23,7 @@ class App {
 
 	private routes() {
 		this.app.use(routes);
+		this.app.use(handleError);
 	}
 
 	public start(port: number) {
