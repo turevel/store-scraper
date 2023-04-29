@@ -57,6 +57,8 @@
 		"eol-last": "error",
 		"complexity": ["error", 4],
 		"max-len": ["error", 90],
+		"no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+		"@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
 		"react-refresh/only-export-components": "warn"
 	}
 }
