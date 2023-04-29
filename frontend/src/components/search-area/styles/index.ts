@@ -6,7 +6,7 @@ export const Container = styled.div`
   left: 0;
   right: 0;
   bottom: 50%;
-  background-color: blue;
+  background-color: ${({ theme }) => theme.colors.accentPrimary};
   display: grid;
   place-items: center;
 `;
