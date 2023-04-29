@@ -5,9 +5,9 @@ import { BothRequests, BuscapeRequests, MeliRequests } from '../utils/requests/'
 class TvsService extends AbstractService {
 	private static async configureExec() {
 		TvsService.exec = {
-			both: BothRequests.getSmartphones,
-			meli: MeliRequests.getSmartphones,
-			buscape: BuscapeRequests.getSmartphones,
+			both: BothRequests.getTvs,
+			meli: MeliRequests.getTvs,
+			buscape: BuscapeRequests.getTvs,
 		};
 	}
 
