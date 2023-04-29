@@ -10,15 +10,7 @@ export const Card = styled.li`
   flex-direction: column;
   overflow: hidden;
   border-radius: 12px;
-
-  &:hover {
-    transform: scale(1.01);
-
-    & .title {
-      overflow: visible;
-      white-space: normal;
-    }
-  }
+  align-self: stretch;
 `;
 
 export const ImageContainer = styled.div`
@@ -39,9 +31,9 @@ export const Title = styled.h2`
   padding: 12px 8px;
   font-size: 1.1rem;
   text-overflow: ellipsis;
-  white-space: nowrap;
   overflow: hidden;
-  transition: overflow ease-in-out 1s;
+  max-height: 200px;
+  flex-grow: 1;
 `;
 
 export const PriceAndCompanyContainer = styled.div`
