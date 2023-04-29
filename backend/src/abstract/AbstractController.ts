@@ -9,13 +9,12 @@ export default abstract class AbstractController {
 	protected static service: typeof AbstractService;
 
 	protected static getCompany(company: string | undefined): Companies {
-		if (company === undefined) return 'both';
+		if (
+			company === undefined
+			|| !AbstractController.companies.includes(company as Companies)
+		) return 'both';
 
-		if (AbstractController.companies.includes(company as Companies)) {
-			return company as Companies;
-		}
-
-		return 'both';
+		return company as Companies;
 	}
 
 	protected static configureExec() {
