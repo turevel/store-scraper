@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: grid;
   place-items: center;
-  height: calc(100% - 160px);
+  flex-grow: 1;
 `;
 
 export const Image = styled.img`

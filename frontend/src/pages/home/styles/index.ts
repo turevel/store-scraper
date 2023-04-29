@@ -7,4 +7,6 @@ export const Main = styled.main`
   margin-inline: auto;
   box-shadow: 0 0 10px rgba(0 0 0 / 12%);
   position: relative;
+  display: flex;
+  flex-direction: column;
 `;
