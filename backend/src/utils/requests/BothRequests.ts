@@ -1,7 +1,6 @@
 import BuscapeRequests from './BuscapeRequests';
 import MeliRequests from './MeliRequests';
 
-
 class BothRequests {
 	public static async getSmartphones() {
 		const meli = await MeliRequests.getSmartphones();
