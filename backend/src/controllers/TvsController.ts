@@ -1,9 +1,10 @@
-import { AbstractController } from '../abstract';
+import { AbstractController } from '../classes';
 import { TvsService } from '../services';
 
 class TvsController extends AbstractController {
-	protected static configureExec() {
-		TvsController.service = TvsService;
+	constructor() {
+		const service = new TvsService();
+		super(service);
 	}
 }
 

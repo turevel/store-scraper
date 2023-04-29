@@ -1,9 +1,10 @@
-import { AbstractController } from '../abstract';
+import { AbstractController } from '../classes';
 import { RefrigeratorsService } from '../services';
 
 class RefrigeratorsController extends AbstractController {
-	protected static configureExec() {
-		RefrigeratorsController.service = RefrigeratorsService;
+	constructor() {
+		const service = new RefrigeratorsService();
+		super(service);
 	}
 }
 

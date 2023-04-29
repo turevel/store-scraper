@@ -4,6 +4,6 @@ import express from 'express';
 
 const router = express.Router();
 
-router.get('/', SmartphonesController.get);
+router.get('/', new SmartphonesController().get);
 
 export default router;

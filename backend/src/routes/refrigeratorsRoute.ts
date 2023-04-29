@@ -4,6 +4,6 @@ import express from 'express';
 
 const router = express.Router();
 
-router.get('/', RefrigeratorsController.get);
+router.get('/', new RefrigeratorsController().get);
 
 export default router;

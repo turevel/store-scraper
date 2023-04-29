@@ -1,4 +1,4 @@
-import AbstractRequests from '../../abstract/AbstractRequests';
+import AbstractRequests from '../../classes/AbstractRequests';
 import MeliExtractor from '../extractors/MeliExtractor';
 
 // const SMARTPHONES_URL = 'https://lista.mercadolivre.com.br/celular';

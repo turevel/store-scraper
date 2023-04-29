@@ -1,4 +1,4 @@
-import AbstractRequests from '../../abstract/AbstractRequests';
+import AbstractRequests from '../../classes/AbstractRequests';
 import BuscapeExtractor from '../extractors/BuscapeExtractor';
 
 // const SMARTPHONES_URL = 'https://www.buscape.com.br/celular';
