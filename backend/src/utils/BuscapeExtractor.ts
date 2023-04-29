@@ -2,8 +2,6 @@ import AbstractExtractor from './AbstractExtractor';
 
 import IProduct from '../interfaces/IProducts';
 
-import { readFileSync } from 'fs';
-
 const BUSCAPE = 'https://www.buscape.com.br';
 const MAIN_CONTENT_QUERY = '[data-testid="hits"]';
 const ITEMS_QUERY = '[data-testid="product-card"]';
@@ -38,9 +36,5 @@ class BuscapeExtractor extends AbstractExtractor {
 		return data;
 	}
 }
-
-const file = readFileSync('../mocks/BUSCAPE-tvs.html');
-
-console.log(BuscapeExtractor.extract(file.toString()));
 
 export default BuscapeExtractor;
