@@ -1,23 +1,24 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 50%;
   background-color: ${({ theme }) => theme.colors.accentPrimary};
+  color: ${({ theme }) => theme.colors.fontLight};
   display: grid;
   place-items: center;
+  position: relative;
+  height: 160px;
 `;
 
 export const Logo = styled.h1`
-  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 2.3rem;
 `;
 
 export const SearchContainer = styled.section`
-  position: absolute;
   bottom: 0;
   left: 50%;
+  position: absolute;
   transform: translate(-50%, 50%);
 `;

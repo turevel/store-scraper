@@ -10,7 +10,7 @@ function Search() {
 				type="input"
 			/>
 
-			<sc.Submit type="button">
+			<sc.Submit title="Pesquisar" type="button">
 				<BiSearch className="icon" />
 			</sc.Submit>
 		</sc.Container>
