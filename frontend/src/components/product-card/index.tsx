@@ -1,10 +1,12 @@
 import * as sc from './styles';
 
-import products from '../../mocks/products';
+import IProducts from '../../interfaces/IProducts';
 
-const product = products[2];
+interface IProps {
+	product: IProducts;
+}
 
-function ProductCard() {
+function ProductCard({ product }: IProps) {
 	return (
 		<sc.Card>
 			<sc.ImageContainer>
