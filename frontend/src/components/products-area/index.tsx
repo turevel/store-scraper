@@ -1,10 +1,32 @@
+import * as sc from './styles';
+
+import { RequestContext } from '../../provider/RequestProvider';
+
 import ProductCard from '../product-card';
 
+import { useContext } from 'react';
+import { v4 } from 'uuid';
+
 function ProductsArea() {
+	const { data } = useContext(RequestContext);
+
 	return (
-		<ul>
-			<ProductCard />
-		</ul>
+		<sc.Container>
+			<sc.Message>
+				Veja os resultados da sua busca:
+			</sc.Message>
+
+			<sc.List>
+				{
+					data.map((product) => (
+						<ProductCard
+							key={ v4() }
+							product={ product }
+						/>)
+					)
+				}
+			</sc.List>
+		</sc.Container>
 	);
 }
 
