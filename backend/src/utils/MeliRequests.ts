@@ -1,9 +1,9 @@
-import AbsRequests from './AbsRequests';
+import AbsRequests from './AbstractRequests';
 import MeliExtractor from './MeliExtractor';
 
-// SMARTPHONES_URL = 'https://lista.mercadolivre.com.br/smartphones#D[A:Smartphones]';
-// REFRIGERATORS_URL = 'https://lista.mercadolivre.com.br/geladeiras#D[A:geladeiras]';
-// TVS_URL = 'https://lista.mercadolivre.com.br/tvs#D[A:tvs]';
+// SMARTPHONES_URL = 'https://lista.mercadolivre.com.br/celular';
+// REFRIGERATORS_URL = 'https://lista.mercadolivre.com.br/geladeira';
+// TVS_URL = 'https://lista.mercadolivre.com.br/tv';
 
 class MeliRequests extends AbsRequests {
 	public static async getSmartphones() {
