@@ -12,6 +12,6 @@ export const light: DefaultTheme = {
 		quaternary: '#ebebeb',
 		font: '#050505',
 		fontLight: '#fafafa',
-		fontDark: '#050505'
+		fontDark: '#050505',
 	}
 };
