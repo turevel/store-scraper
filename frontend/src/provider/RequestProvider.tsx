@@ -18,7 +18,7 @@ interface IProps {
 
 function RequestProvider({ children }: IProps) {
 	const [loading, setLoading] = useState(false);
-	const [data] = useState<IProducts[]>(products);
+	const [data] = useState<IProducts[]>([]);
 
 	const values = useMemo(() => (
 		{
