@@ -6,7 +6,7 @@ export const Container = styled.div`
   display: grid;
   place-items: center;
   position: relative;
-  transition: height ease-in-out 200ms;
+  transition: height ease-in-out 250ms;
   flex-shrink: 0;
 `;
 
