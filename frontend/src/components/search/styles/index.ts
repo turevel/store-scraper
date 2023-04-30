@@ -6,12 +6,13 @@ export const Container = styled.div`
   box-shadow: 0 0 10px rgba(0 0 0 / 12%);
   display: flex;
   overflow: hidden;
+  width: 100%;
 `;
 
 export const Input = styled.input`
   height: 40px;
   padding-inline: 14px;
-  width: 340px;
+  width: calc(100% - 60px);
 `;
 
 export const Submit = styled.button`

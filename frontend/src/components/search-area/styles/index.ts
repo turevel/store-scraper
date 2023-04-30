@@ -19,5 +19,6 @@ export const SearchContainer = styled.section`
   left: 50%;
   position: absolute;
   transform: translate(-50%, 30px);
+  width: min(100% - 40px, 400px);
 `;
 
