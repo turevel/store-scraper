@@ -5,17 +5,28 @@ import Categories from '../../types/Categories';
 import Companies from '../../types/Companies';
 import Select from '../select';
 
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 
+const COMPANIES_OPTIONS = {
+	both: 'Todas',
+	meli: 'Mercado Livre',
+	buscape: 'Buscapé',
+};
+
+const CATEGORIES_OPTIONS = {
+	both: 'Todas',
+	smartphones: 'Celular',
+	refrigerators: 'Geladeira',
+	tvs: 'Tvs',
+};
 
 function FilteredSearch() {
-	const { company, changeCompany, requestCategory } = useContext(RequestContext);
-	const [category, setCategory] = useState('all');
-
-	const handleCategoryChange = (value: string) => {
-		setCategory(value);
-		requestCategory(value as Categories);
-	};
+	const {
+		company,
+		category,
+		changeCompany,
+		changeCategory,
+	} = useContext(RequestContext);
 
 	return (
 		<sc.Container>
@@ -23,28 +34,16 @@ function FilteredSearch() {
 				<span>Fonte:</span>
 				<Select
 					onChange={ (value) => changeCompany(value as Companies) }
-					options={
-						{
-							both: 'Todas',
-							meli: 'Mercado Livre',
-							buscape: 'Buscapé'
-						}
-					}
+					options={ COMPANIES_OPTIONS }
 					value={ company }
 				/>
 			</sc.SelectContainer>
+
 			<sc.SelectContainer>
 				<span>Categorias:</span>
 				<Select
-					onChange={ handleCategoryChange }
-					options={
-						{
-							both: 'Todas',
-							smartphones: 'Celular',
-							refrigerators: 'Geladeira',
-							tvs: 'Tvs',
-						}
-					}
+					onChange={ (value) => changeCategory(value as Categories) }
+					options={ CATEGORIES_OPTIONS }
 					value={ category }
 				/>
 			</sc.SelectContainer>
