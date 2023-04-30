@@ -25,6 +25,7 @@ export const Image = styled.img`
 `;
 
 export const Title = styled.h2`
+  color: ${({ theme }) => theme.colors.font};
   flex-grow: 1;
   font-size: 1.1rem;
   max-height: 200px;

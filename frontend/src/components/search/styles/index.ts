@@ -10,6 +10,8 @@ export const Container = styled.div`
 `;
 
 export const Input = styled.input`
+  background-color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.font};
   height: 40px;
   padding-inline: 14px;
   width: calc(100% - 60px);
