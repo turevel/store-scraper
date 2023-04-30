@@ -1,14 +1,8 @@
 import * as sc from './styles';
 
-import { RequestContext } from '../../provider/RequestProvider';
-
-import { useContext } from 'react';
-
 import { BiSearch } from 'react-icons/bi';
 
 function Search() {
-	const { request } = useContext(RequestContext);
-
 	return (
 		<sc.Container>
 			<sc.Input
@@ -17,7 +11,6 @@ function Search() {
 			/>
 
 			<sc.Submit
-				onClick={ request }
 				title="Pesquisar"
 				type="button"
 			>
