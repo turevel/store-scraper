@@ -12,7 +12,7 @@ function SearchArea() {
 
 	return (
 		<sc.Container
-			style={ { height: loading || data.length > 0 ? '160px' : '50vh' } }
+			style={ { height: loading || data.length > 0 ? '160px' : '65vh' } }
 		>
 			<Logo />
 			<sc.SearchContainer>
