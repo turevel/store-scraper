@@ -15,17 +15,9 @@ export const SearchContainer = styled.section`
   bottom: 0;
   display: flex;
   flex-direction: column;
-  height: 125px;
   justify-content: space-between;
   left: 50%;
   position: absolute;
-  transform: translate(-50%, 20px);
-`;
-
-export const Logo = styled.h1`
-  align-items: center;
-  column-gap: 10px;
-  display: flex;
-  font-size: 2.3rem;
+  transform: translate(-50%, 25px);
 `;
 

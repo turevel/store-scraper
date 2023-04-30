@@ -2,29 +2,20 @@ import * as sc from './styles';
 
 import { RequestContext } from '../../provider/RequestProvider';
 import FilteredSearch from '../filtered-search';
+import Logo from '../logo';
 import Search from '../search';
 
 import { useContext } from 'react';
-import { FaSpider } from 'react-icons/fa';
 
 function SearchArea() {
 	const { loading, data } = useContext(RequestContext);
 
 	return (
 		<sc.Container
-			style={
-				{
-					height: loading || data.length > 0
-						? '160px' : 'calc(50% - 20px)',
-				}
-			}
+			style={ { height: loading || data.length > 0 ? '160px' : '50vh' } }
 		>
+			<Logo />
 			<sc.SearchContainer>
-				<sc.Logo>
-					<FaSpider className="icon" />
-					Store Scraper
-				</sc.Logo>
-
 				<Search />
 				<FilteredSearch />
 			</sc.SearchContainer>
