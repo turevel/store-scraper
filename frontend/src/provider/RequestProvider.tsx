@@ -1,18 +1,25 @@
 import IProducts from '../interfaces/IProducts';
 import Requests from '../services/Requests';
 import Categories from '../types/Categories';
-
 import Companies from '../types/Companies';
 
-import { createContext, ReactNode, useCallback, useMemo, useState } from 'react';
+import {
+	createContext,
+	ReactNode,
+	useCallback,
+	useMemo,
+	useState,
+	useEffect,
+} from 'react';
 
 interface IContext {
-  loading: boolean;
 	data: IProducts[];
-  request: () => void;
-  requestCategory: (_category: Categories) => void;
-	changeCompany: (_company: Companies) => void;
+  loading: boolean;
 	company: Companies;
+	category: Categories;
+	changeCompany: (_company: Companies) => void;
+	changeCategory: (_category: Categories) => void;
+  requestCategory: () => void;
 }
 
 export const RequestContext = createContext({} as IContext);
@@ -22,26 +29,33 @@ interface IProps {
 }
 
 function RequestProvider({ children }: IProps) {
-	const [loading, setLoading] = useState(false);
 	const [data, setData] = useState<IProducts[]>([]);
+	const [loading, setLoading] = useState(false);
 	const [company, setCompany] = useState<Companies>('both');
+	const [category, setCategory] = useState<Categories>('both');
 
-	const requestCategory = useCallback(async (category: Categories) => {
+	const requestCategory = useCallback(async () => {
 		setLoading(true);
 		setData((await Requests.getCategory(category, company)));
 		return setLoading(false);
-	}, [company]);
+	}, [company, category]);
+
+	useEffect(() => {
+		if (category === 'both') return setData([]);
+		requestCategory();
+	}, [company, category, requestCategory]);
 
 	const values = useMemo(() => (
 		{
-			loading,
 			data,
+			loading,
 			company,
+			category,
 			changeCompany: (company: Companies) => setCompany(company),
-			request: () => setLoading((prev) => !prev),
+			changeCategory: (category: Categories) => setCategory(category),
 			requestCategory,
 		}
-	), [loading, data, company, requestCategory]);
+	), [data, loading, company, category, requestCategory]);
 
 	return (
 		<RequestContext.Provider value={ values }>
