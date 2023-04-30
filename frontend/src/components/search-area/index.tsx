@@ -5,6 +5,8 @@ import FilteredSearch from '../filtered-search';
 import Logo from '../logo';
 import Search from '../search';
 
+import ThemeSwitcher from '../theme-switcher';
+
 import { useContext } from 'react';
 
 function SearchArea() {
@@ -13,6 +15,7 @@ function SearchArea() {
 	return (
 		<sc.Container style={ { height: loading || data.length > 0 ? '160px' : '65vh' } }>
 			<Logo />
+			<ThemeSwitcher />
 			<sc.SearchContainer>
 				<Search />
 				<FilteredSearch />
