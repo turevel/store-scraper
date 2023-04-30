@@ -8,5 +8,6 @@ export const Main = styled.main`
   margin-inline: auto;
   min-height: max(100vh, 620px);
   min-width: 360px;
+  overflow-x: hidden;
   position: relative;
 `;
