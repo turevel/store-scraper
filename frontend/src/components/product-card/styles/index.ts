@@ -4,7 +4,7 @@ export const Card = styled.li`
   list-style-type: none;
   background-color: ${({ theme }) => theme.colors.secondary};
   box-shadow: 0 0 5px rgba(0 0 0 / 12%);
-  width: 240px;
+  width: 250px;
   transition: transform ease-in-out 50ms;
   display: flex;
   flex-direction: column;
