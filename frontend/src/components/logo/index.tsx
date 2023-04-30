@@ -7,7 +7,7 @@ import { FaSpider } from 'react-icons/fa';
 
 const INITIAL_STYLE = {
 	fontSize: '2.25rem',
-	top: 'calc(50vh - 152px)',
+	top: 'calc(50vh - 158px)',
 	left: '50%',
 	transform: 'translateX(-50%)'
 };
