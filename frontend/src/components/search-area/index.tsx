@@ -1,6 +1,7 @@
 import * as sc from './styles';
 
 import { RequestContext } from '../../provider/RequestProvider';
+import FilteredSearch from '../filtered-search';
 import Search from '../search';
 
 import { useContext } from 'react';
@@ -21,10 +22,11 @@ function SearchArea() {
 			<sc.SearchContainer>
 				<sc.Logo>
 					<FaSpider className="icon" />
-				Store Scraper
+					Store Scraper
 				</sc.Logo>
 
 				<Search />
+				<FilteredSearch />
 			</sc.SearchContainer>
 		</sc.Container>
 	);
