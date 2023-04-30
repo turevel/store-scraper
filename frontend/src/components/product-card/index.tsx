@@ -27,7 +27,11 @@ function ProductCard({ product }: IProps) {
 				</sc.Company>
 			</sc.PriceAndCompanyContainer>
 
-			<sc.Link href={ product.link } target="_blank">
+			<sc.Link
+				href={ product.link }
+				target="_blank"
+				title="Visualizar em uma nova guia"
+			>
         Visualizar o produto
 			</sc.Link>
 		</sc.Card>
