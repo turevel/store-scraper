@@ -1,4 +1,4 @@
-import IProducts from '../interfaces/IProducts';
+import IProduct from '../interfaces/IProduct';
 import Requests from '../services/Requests';
 import Categories from '../types/Categories';
 import Companies from '../types/Companies';
@@ -13,7 +13,7 @@ import {
 } from 'react';
 
 interface IContext {
-	data: IProducts[];
+	data: IProduct[];
   loading: boolean;
 	company: Companies;
 	category: Categories;
@@ -29,7 +29,7 @@ interface IProps {
 }
 
 function RequestProvider({ children }: IProps) {
-	const [data, setData] = useState<IProducts[]>([]);
+	const [data, setData] = useState<IProduct[]>([]);
 	const [loading, setLoading] = useState(false);
 	const [company, setCompany] = useState<Companies>('both');
 	const [category, setCategory] = useState<Categories>('both');

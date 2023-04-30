@@ -1,4 +1,4 @@
-import IProducts from '../interfaces/IProducts';
+import IProduct from '../interfaces/IProduct';
 import Categories from '../types/Categories';
 import Companies from '../types/Companies';
 
@@ -10,7 +10,7 @@ class Requests {
 	private static ax = axios.create({ baseURL: API_URL });
 
 	public static async getCategory(category: Categories, company: Companies):
-    Promise<IProducts[]> {
+    Promise<IProduct[]> {
 		try {
 			const url = `${API_URL}/${category}?company=${company}`;
 			const { data } = await Requests.ax.get(url);

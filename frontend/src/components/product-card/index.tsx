@@ -1,9 +1,9 @@
 import * as sc from './styles';
 
-import IProducts from '../../interfaces/IProducts';
+import IProduct from '../../interfaces/IProduct';
 
 interface IProps {
-	product: IProducts;
+	product: IProduct;
 }
 
 function ProductCard({ product }: IProps) {

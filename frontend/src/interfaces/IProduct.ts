@@ -1,4 +1,4 @@
-interface IProducts {
+interface IProduct {
   image: string;
 	title: string;
 	link: string;
@@ -6,4 +6,4 @@ interface IProducts {
 	company: string;
 }
 
-export default IProducts;
+export default IProduct;
