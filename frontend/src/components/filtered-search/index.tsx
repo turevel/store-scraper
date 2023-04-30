@@ -1,20 +1,28 @@
 import * as sc from './styles';
 
+import { RequestContext } from '../../provider/RequestProvider';
+import Categories from '../../types/Categories';
+import Companies from '../../types/Companies';
 import Select from '../select';
 
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 
 
 function FilteredSearch() {
-	const [font, setFont] = useState('both');
+	const { company, changeCompany, requestCategory } = useContext(RequestContext);
 	const [category, setCategory] = useState('all');
+
+	const handleCategoryChange = (value: string) => {
+		setCategory(value);
+		requestCategory(value as Categories);
+	};
 
 	return (
 		<sc.Container>
 			<sc.SelectContainer>
 				<span>Fonte:</span>
 				<Select
-					onChange={ (value) => setFont(value) }
+					onChange={ (value) => changeCompany(value as Companies) }
 					options={
 						{
 							both: 'Todas',
@@ -22,13 +30,13 @@ function FilteredSearch() {
 							buscape: 'Buscapé'
 						}
 					}
-					value={ font }
+					value={ company }
 				/>
 			</sc.SelectContainer>
 			<sc.SelectContainer>
 				<span>Categorias:</span>
 				<Select
-					onChange={ (value) => setCategory(value) }
+					onChange={ handleCategoryChange }
 					options={
 						{
 							both: 'Todas',
