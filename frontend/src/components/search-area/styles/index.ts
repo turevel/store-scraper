@@ -18,6 +18,6 @@ export const SearchContainer = styled.section`
   justify-content: space-between;
   left: 50%;
   position: absolute;
-  transform: translate(-50%, 25px);
+  transform: translate(-50%, 30px);
 `;
 

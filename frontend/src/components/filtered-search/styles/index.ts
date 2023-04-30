@@ -6,7 +6,7 @@ export const Container = styled.div`
   row-gap: 10px;
   align-items: center;
   column-gap: 5px;
-  padding: 10px;
+  padding: 15px;
 `;
 
 export const SelectContainer = styled.div`
