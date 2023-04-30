@@ -1,5 +1,5 @@
 {
-  "name": "mb_scraper_backend",
+  "name": "store_scraper_backend",
   "version": "1.0.0",
   "description": "",
   "main": "build/src/server.js",
