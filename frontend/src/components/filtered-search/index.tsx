@@ -17,7 +17,7 @@ const CATEGORIES_OPTIONS = {
 	both: 'Todas',
 	smartphones: 'Celular',
 	refrigerators: 'Geladeira',
-	tvs: 'Tvs',
+	tvs: 'Tv',
 };
 
 function FilteredSearch() {
