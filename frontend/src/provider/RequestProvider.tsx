@@ -36,7 +36,7 @@ function RequestProvider({ children }: IProps) {
 
 	const requestCategory = useCallback(async () => {
 		setLoading(true);
-		setData((await Requests.getCategory(category, company)));
+		setData((await Requests.getProductsByCategory(category, company)));
 		return setLoading(false);
 	}, [company, category]);
 

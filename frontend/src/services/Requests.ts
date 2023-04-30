@@ -9,7 +9,7 @@ const API_URL = 'http://localhost:3001';
 const ax = axios.create({ baseURL: API_URL });
 
 class Requests {
-	public static async getCategory(category: Categories, company: Companies):
+	public static async getProductsByCategory(category: Categories, company: Companies):
     Promise<IProduct[]> {
 		try {
 			const url = `${API_URL}/${category}?company=${company}`;
