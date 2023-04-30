@@ -6,8 +6,8 @@ import { useContext } from 'react';
 import { FaSpider } from 'react-icons/fa';
 
 const INITIAL_STYLE = {
-	fontSize: '2.3rem',
-	top: 'calc(50vh - 180px)',
+	fontSize: '2.25rem',
+	top: 'calc(50vh - 152px)',
 	left: '50%',
 	transform: 'translateX(-50%)'
 };
