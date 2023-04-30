@@ -4,7 +4,7 @@ import { v4 } from 'uuid';
 
 interface IProps {
 	onChange: (_value: string) => void;
-	options: { [key:string]: string };
+	options: { [key: string]: string };
 	value: string;
 }
 

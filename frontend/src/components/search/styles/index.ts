@@ -24,7 +24,7 @@ export const Submit = styled.button`
   width: 60px;
 
   & .icon {
-    font-size: 15px;
+    font-size: 1.2rem;
   }
 
   &:hover {

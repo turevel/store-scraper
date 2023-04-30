@@ -1,23 +1,22 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  color: ${({ theme }) => theme.colors.font};
-  display: flex;
-  row-gap: 10px;
   align-items: center;
+  color: ${({ theme }) => theme.colors.font};
   column-gap: 5px;
+  display: flex;
   padding: 15px;
 `;
 
 export const SelectContainer = styled.div`
-  display: flex;
   align-items: center;
+  display: flex;
   flex-direction: column;
   row-gap: 5px;
 
   & span {
-    font-weight: 600;
     color: ${({ theme }) => theme.colors.fontLight};
+    font-weight: 600;
     text-shadow: 0 0 5px rgba(0 0 0 / 12%);
   }
 `;

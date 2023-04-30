@@ -4,10 +4,10 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.accentPrimary};
   color: ${({ theme }) => theme.colors.fontLight};
   display: grid;
+  flex-shrink: 0;
   place-items: center;
   position: relative;
   transition: height ease-in-out 250ms;
-  flex-shrink: 0;
 `;
 
 export const SearchContainer = styled.section`

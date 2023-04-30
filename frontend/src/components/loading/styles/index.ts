@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: grid;
-  place-items: center;
   flex-grow: 1;
+  place-items: center;
 `;
 
 export const Image = styled.img`

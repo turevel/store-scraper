@@ -22,8 +22,8 @@ function ProductsArea() {
 						<ProductCard
 							key={ v4() }
 							product={ product }
-						/>)
-					)
+						/>
+					))
 				}
 			</sc.List>
 		</sc.Container>

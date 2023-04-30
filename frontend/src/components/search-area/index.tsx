@@ -11,9 +11,7 @@ function SearchArea() {
 	const { loading, data } = useContext(RequestContext);
 
 	return (
-		<sc.Container
-			style={ { height: loading || data.length > 0 ? '160px' : '65vh' } }
-		>
+		<sc.Container style={ { height: loading || data.length > 0 ? '160px' : '65vh' } }>
 			<Logo />
 			<sc.SearchContainer>
 				<Search />

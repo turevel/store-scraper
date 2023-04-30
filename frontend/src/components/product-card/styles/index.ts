@@ -1,26 +1,23 @@
 import styled from 'styled-components';
 
 export const Card = styled.li`
-  list-style-type: none;
+  align-self: stretch;
   background-color: ${({ theme }) => theme.colors.secondary};
+  border-radius: 12px;
   box-shadow: 0 0 5px rgba(0 0 0 / 12%);
-  width: 250px;
-  transition: transform ease-in-out 50ms;
   display: flex;
   flex-direction: column;
+  list-style-type: none;
   overflow: hidden;
-  border-radius: 12px;
-  align-self: stretch;
+  transition: transform ease-in-out 50ms;
+  width: 250px;
 `;
 
 export const ImageContainer = styled.div`
-  display: grid;
-  place-items: center;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding-block: 8px;
   background-color: #fff;
+  display: grid;
+  padding-block: 8px;
+  place-items: center;
 `;
 
 export const Image = styled.img`
@@ -28,52 +25,52 @@ export const Image = styled.img`
 `;
 
 export const Title = styled.h2`
-  padding: 12px 8px;
-  font-size: 1.1rem;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  max-height: 200px;
   flex-grow: 1;
+  font-size: 1.1rem;
+  max-height: 200px;
+  overflow: hidden;
+  padding: 12px 8px;
+  text-overflow: ellipsis;
 `;
 
 export const PriceAndCompanyContainer = styled.div`
-  display: flex;
   align-items: center;
+  border-bottom: 2px solid ${({ theme }) => theme.colors.accentSecondary};
+  border-top: 2px solid ${({ theme }) => theme.colors.accentSecondary};
+  display: flex;
   justify-content: space-between;
   padding: 12px 8px;
-  border-top: 2px solid ${({ theme }) => theme.colors.accentSecondary};
-  border-bottom: 2px solid ${({ theme }) => theme.colors.accentSecondary};
 `;
 
 export const Company = styled.span`
-  display: grid;
-  color: ${({ theme }) => theme.colors.fontLight};
   background-color: ${({ theme }) => theme.colors.accentSecondary};
+  border-radius: 25px;
+  color: ${({ theme }) => theme.colors.fontLight};
+  display: grid;
+  font-size: .85rem;
   height: 25px;
+  padding-inline: 8px;
   place-items: center;
   width: fit-content;
-  padding-inline: 8px;
-  font-size: .85rem;
-  border-radius: 25px;
 `;
 
 export const Price = styled.p`
+  color: ${({ theme }) => theme.colors.accentSecondary};
   font-size: 1.5rem;
   font-weight: 600;
-  color: ${({ theme }) => theme.colors.accentSecondary};
 `;
 
 export const Link = styled.a`
   align-self: center;
-  margin-block: 20px;
-  padding: 8px;
   background-color: ${({ theme }) => theme.colors.accentSecondary};
+  border-radius: 4px;
   color: ${({ theme }) => theme.colors.fontLight};
-  text-decoration: none;
-  text-transform: uppercase;
   font-weight: 600;
   font-size: .8rem;
-  border-radius: 4px;
+  margin-block: 20px;
+  padding: 8px;
+  text-decoration: none;
+  text-transform: uppercase;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.accentTertiary};
