@@ -25,4 +25,8 @@ export default abstract class AbstractRequests {
 	public static async getTvs(): Promise<IProduct[]> {
 		throw new Error('Not implemented');
 	}
+
+	public static async search(_str: string): Promise<IProduct[]> {
+		throw new Error('Not implemented');
+	}
 }
