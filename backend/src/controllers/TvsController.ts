@@ -1,7 +1,7 @@
-import { AbstractController } from '../classes';
+import { AbstractCategoryController } from '../classes';
 import { TvsService } from '../services';
 
-class TvsController extends AbstractController {
+class TvsController extends AbstractCategoryController {
 	constructor() {
 		const service = new TvsService();
 		super(service);
