@@ -6,11 +6,16 @@ import { readFileSync } from 'fs';
 import { resolve } from 'path';
 
 export default abstract class AbstractRequests {
+	private static async delay(ms: number) {
+		return new Promise((resolve) => setTimeout(resolve, ms));
+	}
+
 	protected static readMock(filename: string) {
 		return readFileSync(resolve(__dirname, '..', 'mocks', filename));
 	}
 
 	protected static async makeRequest(url: string) {
+		AbstractRequests.delay(1000);
 		return (await axios.get(url)).data;
 	}
 
