@@ -2,9 +2,9 @@ import IProduct from '../interfaces/IProducts';
 import Companies from '../types/Companies';
 
 export interface IRequestTo {
-  both: () => Promise<IProduct[]>,
-  meli: () => Promise<IProduct[]>,
-  buscape: () => Promise<IProduct[]>,
+  both: (_query?: string) => Promise<IProduct[]>,
+  meli: (_query?: string) => Promise<IProduct[]>,
+  buscape: (_query?: string) => Promise<IProduct[]>,
 }
 
 export default abstract class AbstractService {
@@ -12,7 +12,11 @@ export default abstract class AbstractService {
 
 	constructor(request: IRequestTo) { this.request = request; }
 
-	public async get(company: Companies) {
+	public async getByCategory(company: Companies) {
 		return this.request[company]();
+	}
+
+	public async getBySearch(query: string, company: Companies) {
+		return this.request[company](query);
 	}
 }

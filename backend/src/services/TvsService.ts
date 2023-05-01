@@ -1,7 +1,7 @@
-import { AbstractService } from '../classes';
+import { AbstractCategoryService } from '../classes';
 import { BothRequests, BuscapeRequests, MeliRequests } from '../utils/requests/';
 
-class TvsService extends AbstractService {
+class TvsService extends AbstractCategoryService {
 	constructor() {
 		super(
 			{
