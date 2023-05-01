@@ -13,6 +13,13 @@ export const Select = styled.select`
   &:hover {
     background-color: ${({ theme }) => theme.colors.accentTertiary};
   }
+
+  &:disabled {
+    background-color: ${({ theme }) => theme.colors.tertiary};
+    color: ${({ theme }) => theme.colors.font};
+    cursor: not-allowed;
+    opacity: 1;
+  }
 `;
 
 export const Option = styled.option`
