@@ -32,4 +32,10 @@ export const Submit = styled.button`
   &:hover {
     background-color: ${({ theme }) => theme.colors.accentTertiary};
   }
+
+  &:disabled {
+    background-color: ${({ theme }) => theme.colors.tertiary};
+    color: ${({ theme }) => theme.colors.font};
+    cursor: not-allowed;
+  }
 `;
