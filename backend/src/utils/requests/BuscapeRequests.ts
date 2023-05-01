@@ -5,6 +5,7 @@ const BUSCAPE_URL = 'https://www.buscape.com.br/';
 const SMARTPHONES_URL = `${BUSCAPE_URL}celular`;
 const REFRIGERATORS_URL = `${BUSCAPE_URL}geladeira`;
 const TVS_URL = `${BUSCAPE_URL}tv`;
+const SEARCH_URL = `${BUSCAPE_URL}search?q=`;
 
 class BuscapeRequests extends AbstractRequests {
 	public static async getSmartphones() {
@@ -23,7 +24,7 @@ class BuscapeRequests extends AbstractRequests {
 	}
 
 	public static async search(query: string) {
-		const data = await BuscapeRequests.makeRequest(`${BUSCAPE_URL}/${query}`);
+		const data = await BuscapeRequests.makeRequest(`${SEARCH_URL}${query}`);
 		return BuscapeExtractor.extract(data.toString());
 	}
 }
