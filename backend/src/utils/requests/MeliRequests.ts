@@ -23,7 +23,8 @@ class MeliRequests extends AbstractRequests {
 	}
 
 	public static async search(query: string) {
-		const data = await MeliRequests.makeRequest(`${MELI_URL}/${query}`);
+		const normalizedString = query.split('%20').join('-');
+		const data = await MeliRequests.makeRequest(`${MELI_URL}/${normalizedString}`);
 		return MeliExtractor.extract(data.toString());
 	}
 }
