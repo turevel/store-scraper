@@ -17,7 +17,7 @@ class Requests {
 		} catch (_) { return []; }
 	}
 
-	public static async getProductsBySearch(search: Categories, company: Companies):
+	public static async getProductsBySearch(search: string, company: Companies):
     Promise<IProduct[]> {
 		try {
 			const url = `${API_URL}/search?1=${search}?company=${company}`;
