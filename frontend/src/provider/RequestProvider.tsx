@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import IProduct from '../interfaces/IProduct';
 import Requests from '../services/Requests';
 import Categories from '../types/Categories';
@@ -17,9 +18,12 @@ interface IContext {
   loading: boolean;
 	company: Companies;
 	category: Categories;
+	search: string;
 	changeCompany: (_company: Companies) => void;
 	changeCategory: (_category: Categories) => void;
+	changeSearch: (_search: string) => void;
   requestCategory: () => void;
+  requestSearch: () => void;
 }
 
 export const RequestContext = createContext({} as IContext);
@@ -33,17 +37,29 @@ function RequestProvider({ children }: IProps) {
 	const [loading, setLoading] = useState(false);
 	const [company, setCompany] = useState<Companies>('both');
 	const [category, setCategory] = useState<Categories>('both');
+	const [search, setSearch] = useState('');
 
 	const requestCategory = useCallback(async () => {
+		if (category === 'both') return;
+
 		setLoading(true);
+		setSearch('');
 		setData((await Requests.getProductsByCategory(category, company)));
+
 		return setLoading(false);
 	}, [company, category]);
 
-	useEffect(() => {
-		if (category === 'both') return setData([]);
-		requestCategory();
-	}, [company, category, requestCategory]);
+	const requestSearch = useCallback(async () => {
+		if (search.trim() === '') return;
+
+		setLoading(true);
+		setCategory('both');
+		setData((await Requests.getProductsBySearch(encodeURI(search), company)));
+
+		return setLoading(false);
+	}, [search, company]);
+
+	useEffect(() => { requestCategory(); }, [category]);
 
 	const values = useMemo(() => (
 		{
@@ -51,11 +67,22 @@ function RequestProvider({ children }: IProps) {
 			loading,
 			company,
 			category,
+			search,
 			changeCompany: (company: Companies) => setCompany(company),
 			changeCategory: (category: Categories) => setCategory(category),
+			changeSearch: (search: string) => setSearch(search),
 			requestCategory,
+			requestSearch,
 		}
-	), [data, loading, company, category, requestCategory]);
+	), [
+		data,
+		loading,
+		company,
+		category,
+		search,
+		requestCategory,
+		requestSearch,
+	]);
 
 	return (
 		<RequestContext.Provider value={ values }>
