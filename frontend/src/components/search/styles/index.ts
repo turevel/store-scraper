@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Form = styled.form`
   align-items: center;
   border-radius: 35px;
   box-shadow: 0 0 10px rgba(0 0 0 / 12%);

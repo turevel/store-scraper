@@ -14,7 +14,7 @@ function Search() {
 	} = useContext(RequestContext);
 
 	return (
-		<sc.Container>
+		<sc.Form>
 			<sc.Input
 				onChange={ (e) => changeSearch(e.target.value) }
 				placeholder="Digite um termo de busca..."
@@ -24,13 +24,13 @@ function Search() {
 
 			<sc.Submit
 				disabled={ loading }
-				onClick={ requestSearch }
+				onClick={ (e) => { e.preventDefault(); requestSearch(); } }
 				title="Pesquisar"
-				type="button"
+				type="submit"
 			>
 				<BiSearch className="icon" />
 			</sc.Submit>
-		</sc.Container>
+		</sc.Form>
 	);
 }
 
