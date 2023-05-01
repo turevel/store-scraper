@@ -12,6 +12,8 @@ dist
 dist-ssr
 build
 *.local
+.env
+mongodb
 
 # Editor directories and files
 .vscode/*

@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'Store Scraper';
+  src: url('../assets/fonts/Lato-Regular.ttf');
+}
+
+* {
+  box-sizing: border-box;
+  border: 0;
+  font-family: 'Store Scraper';
+  margin: 0;
+  outline: none;
+  padding: 0;
+  transition: background-color ease-in-out 40ms;
+}
+
+:root {
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+}

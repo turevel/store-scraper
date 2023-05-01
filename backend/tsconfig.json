@@ -3,7 +3,7 @@
     "module": "CommonJS",
     "strict": true,
     "rootDir": "src",
-    "outDir": "build",
+    "outDir": "dist",
     "removeComments": true,
     "noImplicitAny": true,
     "esModuleInterop": true,

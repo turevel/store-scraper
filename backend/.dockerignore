@@ -1,5 +1,7 @@
 node_modules
+dist
+mongodb
+nodemon.json
+.env
 .gitignore
 .dockerignore
-build
-mongodb

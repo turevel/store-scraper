@@ -1,25 +1,26 @@
 {
-  "name": "software-engineering-tests",
+  "name": "store_scraper_app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "backend:dev": "cd backend && npm i && clear && npm run dev",
+    "frontend:dev": "cd frontend && npm i && clear && npm run dev",
+    "backend:start": "cd backend && npm i && clear && npm start",
+    "frontend:start": "cd frontend && npm i && npm run build && clear && npm run preview",
+    "lint": "npx eslint .",
+    "lint:fix": "npx eslint --fix ."
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/dotenv-safe": "^8.1.2",
     "@typescript-eslint/eslint-plugin": "^5.59.1",
     "@typescript-eslint/parser": "^5.59.1",
     "eslint": "^8.39.0",
     "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.3.5",
-    "typescript": "^5.0.4"
-  },
-  "dependencies": {
-    "axios": "^1.4.0",
-    "dotenv-safe": "^8.2.0"
+    "eslint-plugin-react-refresh": "^0.3.5"
   }
 }
