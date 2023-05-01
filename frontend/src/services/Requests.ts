@@ -3,16 +3,24 @@ import Categories from '../types/Categories';
 import Companies from '../types/Companies';
 
 import axios from 'axios';
+import dotenv from 'dotenv';
 
-const API_URL = 'http://localhost:3001';
+let REACT_APP_API_URL: string;
 
-const ax = axios.create({ baseURL: API_URL });
+try {
+	dotenv.config();
+	REACT_APP_API_URL = String(process.env.REACT_APP_API_URL);
+} catch (_) { REACT_APP_API_URL = 'http://localhost:3001'; }
+
+console.log(REACT_APP_API_URL);
+
+const ax = axios.create({ baseURL: REACT_APP_API_URL });
 
 class Requests {
 	public static async getProductsByCategory(category: Categories, company: Companies):
     Promise<IProduct[]> {
 		try {
-			const url = `${API_URL}/${category}?company=${company}`;
+			const url = `${REACT_APP_API_URL}/${category}?company=${company}`;
 			return (await ax.get(url)).data;
 		} catch (_) { return []; }
 	}
@@ -20,7 +28,7 @@ class Requests {
 	public static async getProductsBySearch(search: string, company: Companies):
     Promise<IProduct[]> {
 		try {
-			const url = `${API_URL}/search?q=${search}&company=${company}`;
+			const url = `${REACT_APP_API_URL}/search?q=${search}&company=${company}`;
 			return (await ax.get(url)).data;
 		} catch (_) { return []; }
 	}
