@@ -6,10 +6,10 @@ dotenvSafe.config();
 const uri = String(process.env.MONGO_URI);
 
 const options: ConnectOptions = {
-	dbName: process.env.MOGO_DATABASE,
+	dbName: process.env.MONGO_DATABASE,
 	auth: {
-		username: process.env.MOGO_USERNAME,
-		password: process.env.MOGO_PASSWORD,
+		username: process.env.MONGO_USERNAME,
+		password: process.env.MONGO_PASSWORD,
 	},
 };
 
