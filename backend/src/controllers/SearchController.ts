@@ -20,8 +20,6 @@ class SearchController {
 	public async search({ query }: Request, res: Response) {
 		const search = String(query.q);
 		const company = this.getCompanyName(String(query.company));
-		console.log(search);
-		console.log(company);
 		return res.status(200).json((await this.service.search(search, company)));
 	}
 }
