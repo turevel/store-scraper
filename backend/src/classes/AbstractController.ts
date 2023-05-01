@@ -10,7 +10,7 @@ export default class AbstractController {
 
 	constructor(service: AbstractService) {
 		this.service = service;
-		this.get = this.get.bind(this);
+		this.getByCategory = this.getByCategory.bind(this);
 	}
 
 	protected getCompanyName(company: string): Companies {
@@ -18,8 +18,8 @@ export default class AbstractController {
 		return company as Companies;
 	}
 
-	public async get({ query }: Request, res: Response) {
+	public async getByCategory({ query }: Request, res: Response) {
 		const company = this.getCompanyName(String(query.company));
-		return res.status(200).json((await this.service.get(company)));
+		return res.status(200).json((await this.service.getByCategory(company)));
 	}
 }

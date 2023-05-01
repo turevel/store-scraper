@@ -4,6 +4,6 @@ import express from 'express';
 
 const router = express.Router();
 
-router.get('/', new TvsController().get);
+router.get('/', new TvsController().getByCategory);
 
 export default router;
