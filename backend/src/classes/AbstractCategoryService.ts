@@ -7,16 +7,12 @@ export interface IRequestTo {
   buscape: (_query?: string) => Promise<IProduct[]>,
 }
 
-export default abstract class AbstractService {
+export default abstract class AbstractCategoryService {
 	protected request: IRequestTo;
 
 	constructor(request: IRequestTo) { this.request = request; }
 
-	public async getByCategory(company: Companies) {
+	public async get(company: Companies) {
 		return this.request[company]();
-	}
-
-	public async getBySearch(query: string, company: Companies) {
-		return this.request[company](query);
 	}
 }
