@@ -13,8 +13,15 @@ class Requests {
     Promise<IProduct[]> {
 		try {
 			const url = `${API_URL}/${category}?company=${company}`;
-			const { data } = await ax.get(url);
-			return data;
+			return (await ax.get(url)).data;
+		} catch (_) { return []; }
+	}
+
+	public static async getProductsBySearch(search: Categories, company: Companies):
+    Promise<IProduct[]> {
+		try {
+			const url = `${API_URL}/search?1=${search}?company=${company}`;
+			return (await ax.get(url)).data;
 		} catch (_) { return []; }
 	}
 }
