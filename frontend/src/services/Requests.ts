@@ -20,7 +20,7 @@ class Requests {
 	public static async getProductsBySearch(search: string, company: Companies):
     Promise<IProduct[]> {
 		try {
-			const url = `${API_URL}/search?1=${search}?company=${company}`;
+			const url = `${API_URL}/search?q=${search}&company=${company}`;
 			return (await ax.get(url)).data;
 		} catch (_) { return []; }
 	}
