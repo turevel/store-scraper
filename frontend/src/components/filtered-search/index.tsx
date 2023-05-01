@@ -22,6 +22,7 @@ const CATEGORIES_OPTIONS = {
 
 function FilteredSearch() {
 	const {
+		loading,
 		company,
 		category,
 		changeCompany,
@@ -33,6 +34,7 @@ function FilteredSearch() {
 			<sc.SelectContainer>
 				<span>Fonte:</span>
 				<Select
+					disabled={ loading }
 					onChange={ (value) => changeCompany(value as Companies) }
 					options={ COMPANIES_OPTIONS }
 					value={ company }
@@ -42,6 +44,7 @@ function FilteredSearch() {
 			<sc.SelectContainer>
 				<span>Categorias:</span>
 				<Select
+					disabled={ loading }
 					onChange={ (value) => changeCategory(value as Categories) }
 					options={ CATEGORIES_OPTIONS }
 					value={ category }

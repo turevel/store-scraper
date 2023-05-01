@@ -3,14 +3,16 @@ import * as sc from './styles';
 import { v4 } from 'uuid';
 
 interface IProps {
+	disabled?: boolean;
 	onChange: (_value: string) => void;
 	options: { [key: string]: string };
 	value: string;
 }
 
-function Select({ onChange, options, value }: IProps) {
+function Select({ disabled, onChange, options, value }: IProps) {
 	return (
 		<sc.Select
+			disabled={ disabled }
 			onChange={ (e) => onChange(e.target.value) }
 			value={ value }
 		>
