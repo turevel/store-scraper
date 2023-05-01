@@ -3,16 +3,8 @@ import Categories from '../types/Categories';
 import Companies from '../types/Companies';
 
 import axios from 'axios';
-import dotenv from 'dotenv';
 
-let REACT_APP_API_URL: string;
-
-try {
-	dotenv.config();
-	REACT_APP_API_URL = String(process.env.REACT_APP_API_URL);
-} catch (_) { REACT_APP_API_URL = 'http://localhost:3001'; }
-
-console.log(REACT_APP_API_URL);
+const REACT_APP_API_URL = String(import.meta.env.VITE_APP_API_URL);
 
 const ax = axios.create({ baseURL: REACT_APP_API_URL });
 
