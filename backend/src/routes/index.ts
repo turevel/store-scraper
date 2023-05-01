@@ -1,4 +1,5 @@
 import refrigeratorsRoute from './refrigeratorsRoute';
+import searchRoute from './searchRoute';
 import smartphonesRoute from './smartphonesRoute';
 import tvsRoute from './tvsRoute';
 
@@ -12,5 +13,6 @@ router.get('/status', (_req: Request, res: Response) =>
 router.use('/smartphones', smartphonesRoute);
 router.use('/refrigerators', refrigeratorsRoute);
 router.use('/tvs', tvsRoute);
+router.use('/search', searchRoute);
 
 export default router;
