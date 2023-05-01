@@ -1,6 +1,7 @@
 node_modules
-.gitignore
-.dockerignore
 dist
 mongodb
 nodemon.json
+.env
+.gitignore
+.dockerignore
