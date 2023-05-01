@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "backend:dev": "cd backend && npm i && clear && npm run dev",
+    "frontend:dev": "cd frontend && npm i && clear && npm run dev",
+    "backend:start": "cd backend && npm i && clear && npm start",
+    "frontend:start": "cd frontend && npm i && clear && npm start",
+    "lint": "npx eslint .",
+    "lint:fix": "npx eslint --fix ."
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

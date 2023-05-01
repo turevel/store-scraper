@@ -2,9 +2,10 @@
   "name": "store_scraper_backend",
   "version": "1.0.0",
   "description": "",
-  "main": "build/src/server.js",
+  "main": "dist/server.js",
   "scripts": {
-    "dev": "nodemon src/server.ts"
+    "dev": "nodemon src/server.ts",
+    "start": "tsc --build && node ."
   },
   "keywords": [],
   "author": "",
