@@ -10,6 +10,8 @@ services:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
       MONGO_INITDB_DATABASE: ${MONGO_DATABASE}
+    volumes:
+      - ./mongodb/:/data/db
   backend:
     build: backend
     container_name: store-scraper-api
@@ -23,3 +25,12 @@ services:
       MONGO_DATABASE: ${MONGO_DATABASE}
     depends_on:
       - database
+  frontend:
+    build: frontend
+    container_name: store-scraper
+    ports:
+      - 3000:3000
+    environment:
+      VITE_APP_API_URL: 'http://localhost:${API_PORT}'
+    depends_on:
+      - backend
