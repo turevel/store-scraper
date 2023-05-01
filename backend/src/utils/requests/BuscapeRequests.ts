@@ -1,26 +1,29 @@
 import AbstractRequests from '../../classes/AbstractRequests';
 import BuscapeExtractor from '../extractors/BuscapeExtractor';
 
-// const SMARTPHONES_URL = 'https://www.buscape.com.br/celular';
-// const REFRIGERATORS_URL = 'https://www.buscape.com.br/geladeira';
-// const TVS_URL = 'https://www.buscape.com.br/tv';
+const BUSCAPE_URL = 'https://www.buscape.com.br/';
+const SMARTPHONES_URL = `${BUSCAPE_URL}celular`;
+const REFRIGERATORS_URL = `${BUSCAPE_URL}geladeira`;
+const TVS_URL = `${BUSCAPE_URL}tv`;
 
 class BuscapeRequests extends AbstractRequests {
 	public static async getSmartphones() {
-		// const data = await BuscapeRequests.makeRequest(SMARTPHONES_URL);
-		const data = BuscapeRequests.readMock('BUSCAPE-smartphones.html');
+		const data = await BuscapeRequests.makeRequest(SMARTPHONES_URL);
 		return BuscapeExtractor.extract(data.toString());
 	}
 
 	public static async getRefrigerators() {
-		// const data = await BuscapeRequests.makeRequest(REFRIGERATORS_URL);
-		const data = BuscapeRequests.readMock('BUSCAPE-refrigerators.html');
+		const data = await BuscapeRequests.makeRequest(REFRIGERATORS_URL);
 		return BuscapeExtractor.extract(data.toString());
 	}
 
 	public static async getTvs() {
-		// const data = await BuscapeRequests.makeRequest(TVS_URL);
-		const data = BuscapeRequests.readMock('BUSCAPE-tvs.html');
+		const data = await BuscapeRequests.makeRequest(TVS_URL);
+		return BuscapeExtractor.extract(data.toString());
+	}
+
+	public static async search(query: string) {
+		const data = await BuscapeRequests.makeRequest(`${BUSCAPE_URL}/${query}`);
 		return BuscapeExtractor.extract(data.toString());
 	}
 }

@@ -19,6 +19,12 @@ class BothRequests {
 		const buscape = await BuscapeRequests.getTvs();
 		return [...meli, ...buscape];
 	}
+
+	public static async search(query: string) {
+		const meli = await MeliRequests.search(query);
+		const buscape = await BuscapeRequests.search(query);
+		return [...meli, ...buscape];
+	}
 }
 
 export default BothRequests;
