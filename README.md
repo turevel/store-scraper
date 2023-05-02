@@ -60,17 +60,17 @@ Para acessar a API em sua máquina tenha como base a url: `http://localhost:{API
     <tr>
       <td><b>GET</b></td>
       <td><code>/smartphones?company=both</code></td>
-      <td>Retorna as smartphones de ambos os sites.</td>
+      <td>Retorna os smartphones de ambos os sites.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
       <td><code>/smartphones?company=meli</code></td>
-      <td>Retorna as smartphones do Mercado Livre.</td>
+      <td>Retorna os smartphones do Mercado Livre.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
       <td><code>/smartphones?company=buscape</code></td>
-      <td>Retorna as smartphones do Buscapé.</td>
+      <td>Retorna os smartphones do Buscapé.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
