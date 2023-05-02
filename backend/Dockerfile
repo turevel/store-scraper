@@ -8,4 +8,6 @@ COPY . .
 
 RUN npm i
 
+CMD npm run build
+
 ENTRYPOINT npm start
