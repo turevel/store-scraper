@@ -1,5 +1,4 @@
-import Home from './pages/home';
-
+import Home from './pages';
 import { AppContext } from './provider/AppProvider';
 import RequestProvider from './provider/RequestProvider';
 import GlobalStyles from './styles/global';

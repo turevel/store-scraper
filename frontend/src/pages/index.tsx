@@ -1,10 +1,10 @@
 import * as sc from './styles';
 
-import Loading from '../../components/loading';
-import ProductsArea from '../../components/products-area';
-import SearchArea from '../../components/search-area';
+import Loading from '../components/loading';
+import ProductsArea from '../components/products-area';
+import SearchArea from '../components/search-area';
 
-import { RequestContext } from '../../provider/RequestProvider';
+import { RequestContext } from '../provider/RequestProvider';
 
 import { useContext } from 'react';
 
