@@ -14,7 +14,7 @@ function SearchArea() {
 
 	return (
 		<sc.Container
-			style={ { height: loading || products.length > 0 ? '160px' : '65vh' } }
+			style={ { height: loading || products.length > 0 ? '160px' : '59vh' } }
 		>
 			<Logo />
 			<ThemeSwitcher />
