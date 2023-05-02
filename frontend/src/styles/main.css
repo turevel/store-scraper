@@ -20,3 +20,7 @@
 button {
   cursor: pointer;
 }
+
+.icon, img {
+  pointer-events: none;
+}
