@@ -21,7 +21,7 @@ class Requests {
     Promise<IProduct[]> {
 		try {
 			const url = `${REACT_APP_API_URL}/search?q=${
-				encodeURI(search.trim())}&company=${company}`;
+				encodeURI(search.trim().toLowerCase())}&company=${company}`;
 			return (await ax.get(url)).data;
 		} catch (_) { return []; }
 	}
