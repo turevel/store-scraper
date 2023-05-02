@@ -54,7 +54,7 @@ function RequestProvider({ children }: IProps) {
 
 		setLoading(true);
 		setCategory('both');
-		setData((await Requests.getProductsBySearch(encodeURI(search), company)));
+		setData((await Requests.getProductsBySearch(search, company)));
 
 		return setLoading(false);
 	}, [search, company]);
