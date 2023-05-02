@@ -6,8 +6,6 @@ EXPOSE 80
 
 COPY . .
 
-RUN npm i
-
-CMD npm run build
+RUN npm i && npm run build
 
 ENTRYPOINT npm start
