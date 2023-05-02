@@ -12,12 +12,12 @@ function App() {
 	const { theme } = useContext(AppContext);
 
 	return (
-		<RequestProvider>
-			<ThemeProvider theme={ themes[theme] }>
-				<GlobalStyles />
+		<ThemeProvider theme={ themes[theme] }>
+			<GlobalStyles />
+			<RequestProvider>
 				<Home  />
-			</ThemeProvider>
-		</RequestProvider>
+			</RequestProvider>
+		</ThemeProvider>
 	);
 }
 
