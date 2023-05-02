@@ -1,6 +1,6 @@
 import App from './app.tsx';
 import AppProvider from './provider/AppProvider.tsx';
-import './styles/reset.css';
+import './styles/main.css';
 
 import ReactDOM from 'react-dom/client';
 
