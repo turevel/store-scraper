@@ -60,6 +60,11 @@ function RequestProvider({ children }: { children: ReactNode; }) {
 
 	useEffect(() => { getProductsByCategory(); }, [category]);
 
+	useEffect(() => {
+		getProductsBySearch();
+		getProductsByCategory();
+	}, [marketplace]);
+
 	const values = useMemo(() => (
 		{
 			products,
