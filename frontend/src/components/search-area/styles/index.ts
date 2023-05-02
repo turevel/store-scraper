@@ -10,7 +10,7 @@ export const Container = styled.div`
   transition: height ease-in-out 250ms;
 `;
 
-export const SearchContainer = styled.section`
+export const SearchArea = styled.section`
   align-items: center;
   bottom: 0;
   display: flex;

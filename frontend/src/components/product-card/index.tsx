@@ -2,11 +2,7 @@ import * as sc from './styles';
 
 import IProduct from '../../interfaces/IProduct';
 
-interface IProps {
-	product: IProduct;
-}
-
-function ProductCard({ product }: IProps) {
+function ProductCard({ product }: { product: IProduct; }) {
 	return (
 		<sc.Card>
 			<sc.ImageContainer>

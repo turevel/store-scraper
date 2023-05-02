@@ -22,7 +22,7 @@ function ThemeSwitcher() {
 						id="theme"
 						type="checkbox"
 						checked={ theme === 'light' }
-						onChange={changeTheme}
+						onChange={ changeTheme }
 					/>
 
 					<BiMoon className="icon" />

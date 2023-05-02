@@ -19,7 +19,7 @@ export default class AbstractCategoryController {
 	}
 
 	public async get({ query }: Request, res: Response) {
-		const company = this.getCompanyName(String(query.company));
+		const company = this.getCompanyName(String(query.marketplace));
 		return res.status(200).json((await this.service.get(company)));
 	}
 }

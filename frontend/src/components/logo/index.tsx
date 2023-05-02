@@ -5,24 +5,30 @@ import { RequestContext } from '../../provider/RequestProvider';
 import { useContext } from 'react';
 import { FaSpider } from 'react-icons/fa';
 
-const INITIAL_STYLE = {
+const LOGO_INITIAL_STYLE = {
 	fontSize: '2.25rem',
 	left: '50%',
 	top: 'calc(65vh - 166px)',
 	transform: 'translateX(-50%)'
 };
 
-const MOVE_STYLE = {
+const LOGO_MOVE_STYLE = {
 	fontSize: '1.7rem',
 	left: '15px',
 	top: '15px',
 };
 
 function Logo() {
-	const { loading, data } = useContext(RequestContext);
+	const { loading, products } = useContext(RequestContext);
 
 	return (
-		<sc.Logo style={ loading || data.length > 0 ? MOVE_STYLE : INITIAL_STYLE }>
+		<sc.Logo
+			style={
+				loading || products.length > 0
+					? LOGO_MOVE_STYLE
+					: LOGO_INITIAL_STYLE
+			}
+		>
 			<FaSpider className="icon" />
 			Store Scraper
 		</sc.Logo>

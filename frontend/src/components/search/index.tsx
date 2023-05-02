@@ -9,14 +9,14 @@ function Search() {
 	const {
 		loading,
 		search,
-		changeSearch,
-		requestSearch,
+		setSearch,
+		getProductsBySearch,
 	} = useContext(RequestContext);
 
 	return (
 		<sc.Form>
 			<sc.Input
-				onChange={ (e) => changeSearch(e.target.value) }
+				onChange={ (e) => setSearch(e.target.value) }
 				placeholder="Digite um termo de busca..."
 				type="input"
 				value={ search }
@@ -24,7 +24,7 @@ function Search() {
 
 			<sc.Submit
 				disabled={ loading }
-				onClick={ (e) => { e.preventDefault(); requestSearch(); } }
+				onClick={ (e) => { e.preventDefault(); getProductsBySearch(); } }
 				title="Pesquisar"
 				type="submit"
 			>

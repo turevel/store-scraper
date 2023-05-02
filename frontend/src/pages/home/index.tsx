@@ -9,13 +9,13 @@ import { RequestContext } from '../../provider/RequestProvider';
 import { useContext } from 'react';
 
 function Home() {
-	const { loading, data } = useContext(RequestContext);
+	const { loading, products } = useContext(RequestContext);
 
 	return (
 		<sc.Main>
 			<SearchArea />
 			{ loading && <Loading /> }
-			{ !loading && data.length > 0 && <ProductsArea /> }
+			{ !loading && products.length > 0 && <ProductsArea /> }
 		</sc.Main>
 	);
 }

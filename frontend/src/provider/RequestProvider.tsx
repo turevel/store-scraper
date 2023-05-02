@@ -1,8 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import IProduct from '../interfaces/IProduct';
 import Requests from '../services/Requests';
-import Categories from '../types/Categories';
-import Companies from '../types/Companies';
+import { Marketplaces, Categories } from '../types';
 
 import {
 	createContext,
@@ -14,74 +13,74 @@ import {
 } from 'react';
 
 interface IContext {
-	data: IProduct[];
+	products: IProduct[];
   loading: boolean;
-	company: Companies;
+	marketplace: Marketplaces;
 	category: Categories;
 	search: string;
-	changeCompany: (_company: Companies) => void;
-	changeCategory: (_category: Categories) => void;
-	changeSearch: (_search: string) => void;
-  requestCategory: () => void;
-  requestSearch: () => void;
+	setMarketplace: (_mkt: Marketplaces) => void;
+	setCategory: (_cgy: Categories) => void;
+	setSearch: (_sch: string) => void;
+  getProductsByCategory: () => void;
+  getProductsBySearch: () => void;
 }
 
 export const RequestContext = createContext({} as IContext);
 
-interface IProps {
-  children: ReactNode;
-}
-
-function RequestProvider({ children }: IProps) {
-	const [data, setData] = useState<IProduct[]>([]);
+function RequestProvider({ children }: { children: ReactNode; }) {
+	const [products, setProducts] = useState<IProduct[]>([]);
 	const [loading, setLoading] = useState(false);
-	const [company, setCompany] = useState<Companies>('both');
+	const [marketplace, setMarketplace] = useState<Marketplaces>('both');
 	const [category, setCategory] = useState<Categories>('both');
 	const [search, setSearch] = useState('');
 
-	const requestCategory = useCallback(async () => {
+	const getProductsByCategory = useCallback(async () => {
 		if (category === 'both') return;
 
 		setLoading(true);
 		setSearch('');
-		setData((await Requests.getProductsByCategory(category, company)));
+
+		const response = await Requests.getProductsByCategory(category, marketplace);
+		setProducts(response);
 
 		return setLoading(false);
-	}, [company, category]);
+	}, [marketplace, category]);
 
-	const requestSearch = useCallback(async () => {
+	const getProductsBySearch = useCallback(async () => {
 		if (search.trim() === '') return;
 
 		setLoading(true);
 		setCategory('both');
-		setData((await Requests.getProductsBySearch(search, company)));
+
+		const response = await Requests.getProductsBySearch(search, marketplace);
+		setProducts(response);
 
 		return setLoading(false);
-	}, [search, company]);
+	}, [search, marketplace]);
 
-	useEffect(() => { requestCategory(); }, [category]);
+	useEffect(() => { getProductsByCategory(); }, [category]);
 
 	const values = useMemo(() => (
 		{
-			data,
+			products,
 			loading,
-			company,
+			marketplace,
 			category,
 			search,
-			changeCompany: (company: Companies) => setCompany(company),
-			changeCategory: (category: Categories) => setCategory(category),
-			changeSearch: (search: string) => setSearch(search),
-			requestCategory,
-			requestSearch,
+			setMarketplace: (mkt: Marketplaces) => setMarketplace(mkt),
+			setCategory: (cgy: Categories) => setCategory(cgy),
+			setSearch: (sch: string) => setSearch(sch),
+			getProductsByCategory,
+			getProductsBySearch,
 		}
 	), [
-		data,
+		products,
 		loading,
-		company,
+		marketplace,
 		category,
 		search,
-		requestCategory,
-		requestSearch,
+		getProductsByCategory,
+		getProductsBySearch,
 	]);
 
 	return (
