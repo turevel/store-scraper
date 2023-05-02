@@ -1,1 +1,1 @@
-export type Companies = 'both' | 'meli' | 'buscape';
+export type Marketplaces = 'both' | 'meli' | 'buscape';
