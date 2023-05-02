@@ -17,7 +17,7 @@ function Search() {
 		<sc.Form>
 			<sc.Input
 				onChange={ (e) => setSearch(e.target.value) }
-				placeholder="Digite um termo de busca..."
+				placeholder="Digite sua busca..."
 				type="input"
 				value={ search }
 			/>
