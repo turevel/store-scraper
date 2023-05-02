@@ -29,7 +29,9 @@ Para usar a aplicação com o NodeJS, certifique-se se adicionar o arquivo `.env
 
 Na raiz do projeto execute o comando `npm run requirements` para instalar todas as dependências do projeto.
 
-Em uma aba do terminal digite o comando `backend:start` para iniciar o serviço de backend. Para iniciar o frontend, digite o comando (em uma nova aba) `frontend:start`.
+Em uma aba do terminal digite o comando `npm run backend:start` para iniciar o serviço de backend. Para iniciar o frontend, digite o comando (em uma nova aba) `npm run frontend:start`.
+
+Quando ambos os serviços estivem em execução, abra seu navegador na porta `http://localhost:3000` para ver a aplicação rodando.
 
 ### Uso com o Docker
 
