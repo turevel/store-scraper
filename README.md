@@ -61,62 +61,62 @@ Para acessar a API em sua máquina tenha como base a url: `http://localhost:{API
   <tbody>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/smartphones?company=both</code></td>
-      <td>Retorna os smartphones de ambos os sites.</td>
+      <td><code>/phones?marketplace=both</code></td>
+      <td>Retorna os celulares de ambos os sites.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/smartphones?company=meli</code></td>
-      <td>Retorna os smartphones do Mercado Livre.</td>
+      <td><code>/phones?marketplace=meli</code></td>
+      <td>Retorna os celulares do Mercado Livre.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/smartphones?company=buscape</code></td>
-      <td>Retorna os smartphones do Buscapé.</td>
+      <td><code>/phones?marketplace=buscape</code></td>
+      <td>Retorna os celulares do Buscapé.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/refrigerators?company=both</code></td>
+      <td><code>/refrigerators?marketplace=both</code></td>
       <td>Retorna as geladeiras de ambos os sites.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/refrigerators?company=meli</code></td>
+      <td><code>/refrigerators?marketplace=meli</code></td>
       <td>Retorna as geladeiras do Mercado Livre.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/refrigerators?company=buscape</code></td>
+      <td><code>/refrigerators?marketplace=buscape</code></td>
       <td>Retorna as geladeiras do Buscapé.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/tvs?company=both</code></td>
+      <td><code>/tvs?marketplace=both</code></td>
       <td>Retorna as tvs de ambos os sites.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/tvs?company=meli</code></td>
+      <td><code>/tvs?marketplace=meli</code></td>
       <td>Retorna as tvs do Mercado Livre.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/tvs?company=buscape</code></td>
+      <td><code>/tvs?marketplace=buscape</code></td>
       <td>Retorna as tvs do Buscapé.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/search/?q={SEARCH_QUERY}&company=both</code></td>
+      <td><code>/search/?q={SEARCH_QUERY}&marketplace=both</code></td>
       <td>Retorna a pesquisa de ambos os sites.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/search/?q={SEARCH_QUERY}&company=meli</td>
+      <td><code>/search/?q={SEARCH_QUERY}&marketplace=meli</td>
       <td>Retorna a pesquisa do Mercado Livre.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/search/?q={SEARCH_QUERY}&company=buscape</code></td>
+      <td><code>/search/?q={SEARCH_QUERY}&marketplace=buscape</code></td>
       <td>Retorna a pesquisa do Buscapé.</td>
     </tr>
   </tbody>
