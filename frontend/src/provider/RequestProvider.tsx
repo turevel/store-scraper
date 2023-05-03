@@ -61,8 +61,8 @@ function RequestProvider({ children }: { children: ReactNode; }) {
 	useEffect(() => { getProductsByCategory(); }, [category]);
 
 	useEffect(() => {
-		getProductsBySearch();
-		getProductsByCategory();
+		if (search.trim() !== '') getProductsBySearch();
+		else if (category !== 'both') getProductsByCategory();
 	}, [marketplace]);
 
 	const values = useMemo(() => (
