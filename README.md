@@ -119,5 +119,10 @@ Para acessar a API em sua máquina tenha como base a url: `http://localhost:{API
       <td><code>/search?q={SEARCH_QUERY}&marketplace=buscape</code></td>
       <td>Retorna a pesquisa do Buscapé.</td>
     </tr>
+    <tr>
+      <td><b>GET</b></td>
+      <td><code>/status</code></td>
+      <td>Retorna o status de execução da api.</td>
+    </tr>
   </tbody>
 </table>
