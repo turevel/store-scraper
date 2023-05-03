@@ -106,17 +106,17 @@ Para acessar a API em sua máquina tenha como base a url: `http://localhost:{API
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/search/?q={SEARCH_QUERY}&marketplace=both</code></td>
+      <td><code>/search?q={SEARCH_QUERY}&marketplace=both</code></td>
       <td>Retorna a pesquisa de ambos os sites.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/search/?q={SEARCH_QUERY}&marketplace=meli</td>
+      <td><code>/search?q={SEARCH_QUERY}&marketplace=meli</td>
       <td>Retorna a pesquisa do Mercado Livre.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/search/?q={SEARCH_QUERY}&marketplace=buscape</code></td>
+      <td><code>/search?q={SEARCH_QUERY}&marketplace=buscape</code></td>
       <td>Retorna a pesquisa do Buscapé.</td>
     </tr>
   </tbody>
