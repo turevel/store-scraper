@@ -29,7 +29,7 @@ Para fazer uso da aplicação é recomendado ter instalado em sua máquina o `Do
 
 Para usar a aplicação com o `NodeJS`, certifique-se de adicionar o arquivo `.env` com as variáveis preenchidas tendo como exemplo o arquivo `.env.example` em ambas as pastas (backend e frontend).
 
-Na raiz do projeto execute o comando `npm run requirements` para instalar todas as dependências do projeto.
+Na pasta raiz do projeto, execute o comando `npm run requirements` para instalar todas as dependências do projeto.
 
 Em uma aba do terminal digite o comando `npm run backend:start` para iniciar o serviço de backend. Para iniciar o frontend, digite o comando (em uma nova aba) `npm run frontend:start`.
 
