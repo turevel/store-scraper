@@ -2,27 +2,27 @@ import BuscapeRequests from './BuscapeRequests';
 import MeliRequests from './MeliRequests';
 
 class BothRequests {
-	public static async getSmartphones() {
-		const meli = await MeliRequests.getSmartphones();
-		const buscape = await BuscapeRequests.getSmartphones();
+	public async getPhones() {
+		const meli = await new MeliRequests().getPhones();
+		const buscape = await new BuscapeRequests().getPhones();
 		return [...meli, ...buscape];
 	}
 
-	public static async getRefrigerators() {
-		const meli = await MeliRequests.getRefrigerators();
-		const buscape = await BuscapeRequests.getRefrigerators();
+	public async getRefrigerators() {
+		const meli = await new MeliRequests().getRefrigerators();
+		const buscape = await new BuscapeRequests().getRefrigerators();
 		return [...meli, ...buscape];
 	}
 
-	public static async getTvs() {
-		const meli = await MeliRequests.getTvs();
-		const buscape = await BuscapeRequests.getTvs();
+	public async getTvs() {
+		const meli = await new MeliRequests().getTvs();
+		const buscape = await new BuscapeRequests().getTvs();
 		return [...meli, ...buscape];
 	}
 
-	public static async search(query: string) {
-		const meli = await MeliRequests.search(query);
-		const buscape = await BuscapeRequests.search(query);
+	public async search(query: string) {
+		const meli = await new MeliRequests().search(query);
+		const buscape = await new BuscapeRequests().search(query);
 		return [...meli, ...buscape];
 	}
 }

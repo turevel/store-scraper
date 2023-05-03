@@ -1,4 +1,4 @@
-import { ErrorStatus } from '../classes';
+import ErrorStatus from '../utils/ErrorStatus';
 
 import { Request, Response, NextFunction } from 'express';
 

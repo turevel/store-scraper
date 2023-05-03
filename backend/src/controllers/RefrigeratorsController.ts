@@ -1,11 +1,9 @@
-import { AbstractCategoryController } from '../classes';
+import AbstractCategoryController from './AbstractCategoryController';
+
 import { RefrigeratorsService } from '../services';
 
 class RefrigeratorsController extends AbstractCategoryController {
-	constructor() {
-		const service = new RefrigeratorsService();
-		super(service);
-	}
+	constructor() { super(new RefrigeratorsService()); }
 }
 
 export default RefrigeratorsController;

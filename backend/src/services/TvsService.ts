@@ -1,13 +1,14 @@
-import { AbstractCategoryService } from '../classes';
+import AbstractCategoryService from './AbstractCategoryService';
+
 import { BothRequests, BuscapeRequests, MeliRequests } from '../utils/requests/';
 
 class TvsService extends AbstractCategoryService {
 	constructor() {
 		super(
 			{
-				both: BothRequests.getTvs,
-				meli: MeliRequests.getTvs,
-				buscape: BuscapeRequests.getTvs,
+				both: () => new BothRequests().getTvs(),
+				meli: () => new MeliRequests().getTvs(),
+				buscape: () => new BuscapeRequests().getTvs(),
 			}
 		);
 	}
