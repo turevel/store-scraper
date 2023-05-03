@@ -41,8 +41,8 @@ Inicie a aplicação usando o `docker compose` com o comando: `docker compose up
 
 Para verificar o status dos serviços você pode dar os comandos:
 
-- backend: `docker logs backend -f`;
-- frontend: `docker logs frontend -f`.
+- **backend**: `docker logs backend -f`;
+- **frontend**: `docker logs frontend -f`.
 
 Quando ambos os serviços estivem em execução, abra seu navegador na porta `http://localhost:3000` para ver a aplicação rodando.
 
@@ -61,52 +61,57 @@ Para acessar a API em sua máquina tenha como base a url: `http://localhost:{API
   <tbody>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/phones?marketplace=both</code></td>
-      <td>Retorna os celulares de ambos os sites.</td>
+      <td><code>/</code></td>
+      <td>Retorna o índice de rotas da api.</td>
+    </tr>
+    <tr>
+      <td><b>GET</b></td>
+      <td><code>/phones</code></td>
+      <td>Retorna celulares de ambos os sites.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
       <td><code>/phones?marketplace=meli</code></td>
-      <td>Retorna os celulares do Mercado Livre.</td>
+      <td>Retorna celulares do Mercado Livre.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
       <td><code>/phones?marketplace=buscape</code></td>
-      <td>Retorna os celulares do Buscapé.</td>
+      <td>Retorna celulares do Buscapé.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/refrigerators?marketplace=both</code></td>
-      <td>Retorna as geladeiras de ambos os sites.</td>
+      <td><code>/refrigerators</code></td>
+      <td>Retorna geladeiras de ambos os sites.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
       <td><code>/refrigerators?marketplace=meli</code></td>
-      <td>Retorna as geladeiras do Mercado Livre.</td>
+      <td>Retorna geladeiras do Mercado Livre.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
       <td><code>/refrigerators?marketplace=buscape</code></td>
-      <td>Retorna as geladeiras do Buscapé.</td>
+      <td>Retorna geladeiras do Buscapé.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/tvs?marketplace=both</code></td>
-      <td>Retorna as tvs de ambos os sites.</td>
+      <td><code>/tvs</code></td>
+      <td>Retorna tvs de ambos os sites.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
       <td><code>/tvs?marketplace=meli</code></td>
-      <td>Retorna as tvs do Mercado Livre.</td>
+      <td>Retorna tvs do Mercado Livre.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
       <td><code>/tvs?marketplace=buscape</code></td>
-      <td>Retorna as tvs do Buscapé.</td>
+      <td>Retorna tvs do Buscapé.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/search?q={SEARCH_QUERY}&marketplace=both</code></td>
+      <td><code>/search?q={SEARCH_QUERY}</code></td>
       <td>Retorna a pesquisa de ambos os sites.</td>
     </tr>
     <tr>
