@@ -7,6 +7,8 @@ import routes from './routes';
 import cors from 'cors';
 import express from 'express';
 
+import { resolve } from 'path';
+
 class App {
 	public app: express.Express;
 
@@ -22,6 +24,7 @@ class App {
 	}
 
 	private routes() {
+		this.app.use('/', express.static(resolve(__dirname, '..', 'public')));
 		this.app.use(routes);
 		this.app.use(handleError);
 	}
