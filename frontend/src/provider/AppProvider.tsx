@@ -1,4 +1,4 @@
-import Themes from '../types/Themes';
+import { Themes } from '../types';
 
 import { createContext, useMemo, useState, ReactNode } from 'react';
 
@@ -9,11 +9,7 @@ interface IContext {
 
 export const AppContext = createContext({} as IContext);
 
-interface IProps {
-  children: ReactNode;
-}
-
-function AppProvider({ children }: IProps) {
+function AppProvider({ children }: { children: ReactNode; }) {
 	const [theme, setTheme] = useState<Themes>('light');
 
 	const values = useMemo(() => (

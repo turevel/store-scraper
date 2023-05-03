@@ -1,7 +1,7 @@
-import Home from './pages/home';
-
+import Home from './pages';
 import { AppContext } from './provider/AppProvider';
 import RequestProvider from './provider/RequestProvider';
+import GlobalStyles from './styles/global';
 import * as themes from './styles/themes';
 
 import { useContext } from 'react';
@@ -11,11 +11,12 @@ function App() {
 	const { theme } = useContext(AppContext);
 
 	return (
-		<RequestProvider>
-			<ThemeProvider theme={ themes[theme] }>
+		<ThemeProvider theme={ themes[theme] }>
+			<GlobalStyles />
+			<RequestProvider>
 				<Home  />
-			</ThemeProvider>
-		</RequestProvider>
+			</RequestProvider>
+		</ThemeProvider>
 	);
 }
 

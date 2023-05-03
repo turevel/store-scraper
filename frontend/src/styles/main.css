@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Store Scraper';
-  src: url('../assets/fonts/Lato-Regular.ttf');
+  src: url('../assets/fonts/Lato.ttf');
 }
 
 * {
@@ -19,4 +19,8 @@
 
 button {
   cursor: pointer;
+}
+
+.icon, img {
+  pointer-events: none;
 }

@@ -1,5 +1,6 @@
-import { AbstractExtractor } from '../../classes';
-import IProduct from '../../interfaces/IProducts';
+import AbstractExtractor from './AbstractExtractor';
+
+import IProduct from '../../interfaces/IProduct';
 
 const BUSCAPE = 'https://www.buscape.com.br';
 const MAIN_CONTENT_QUERY = '[data-testid="hits"]';
@@ -11,16 +12,15 @@ const ITEM_PRICE_QUERY = '[data-testid="product-card::price"]';
 
 class BuscapeExtractor extends AbstractExtractor {
 	public static extract(content: string) {
-		BuscapeExtractor.loadHTML(content);
-		BuscapeExtractor.setContent(MAIN_CONTENT_QUERY);
+		BuscapeExtractor.load(content, MAIN_CONTENT_QUERY);
 
-		const items = BuscapeExtractor.getElements(ITEMS_QUERY);
+		const items = BuscapeExtractor.getProducts(ITEMS_QUERY);
 		const data: IProduct[] = [];
 
 		items.each((_, item) => {
 			const el = BuscapeExtractor.loader(item);
 
-			const noScriptImage = this
+			const noScriptImage = BuscapeExtractor
 				.loader(el.find(`${ITEM_IMAGE_QUERY} noscript`).text()).attr('src');
 
 			data.push({

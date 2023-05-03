@@ -1,13 +1,12 @@
 import * as sc from './styles';
 
 import { RequestContext } from '../../provider/RequestProvider';
-import Categories from '../../types/Categories';
-import Companies from '../../types/Companies';
+import { Marketplaces, Categories } from '../../types';
 import Select from '../select';
 
 import { useContext } from 'react';
 
-const COMPANIES_OPTIONS = {
+const MARKETPLACES_OPTIONS = {
 	both: 'Todas',
 	meli: 'Mercado Livre',
 	buscape: 'Buscapé',
@@ -15,39 +14,33 @@ const COMPANIES_OPTIONS = {
 
 const CATEGORIES_OPTIONS = {
 	both: 'Todas',
-	smartphones: 'Celular',
-	refrigerators: 'Geladeira',
-	tvs: 'Tv',
+	phones: 'Celulares',
+	refrigerators: 'Geladeiras',
+	tvs: 'Tv\'s',
 };
 
 function FilteredSearch() {
-	const {
-		loading,
-		company,
-		category,
-		changeCompany,
-		changeCategory,
-	} = useContext(RequestContext);
+	const context = useContext(RequestContext);
 
 	return (
 		<sc.Container>
 			<sc.SelectContainer>
 				<span>Fonte:</span>
 				<Select
-					disabled={ loading }
-					onChange={ (value) => changeCompany(value as Companies) }
-					options={ COMPANIES_OPTIONS }
-					value={ company }
+					disabled={ context.loading }
+					onChange={ (value) => context.setMarketplace(value as Marketplaces) }
+					options={ MARKETPLACES_OPTIONS }
+					value={ context.marketplace }
 				/>
 			</sc.SelectContainer>
 
 			<sc.SelectContainer>
 				<span>Categorias:</span>
 				<Select
-					disabled={ loading }
-					onChange={ (value) => changeCategory(value as Categories) }
+					disabled={ context.loading }
+					onChange={ (value) => context.setCategory(value as Categories) }
 					options={ CATEGORIES_OPTIONS }
-					value={ category }
+					value={ context.category }
 				/>
 			</sc.SelectContainer>
 		</sc.Container>

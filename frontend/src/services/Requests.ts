@@ -1,28 +1,25 @@
 import IProduct from '../interfaces/IProduct';
-import Categories from '../types/Categories';
-import Companies from '../types/Companies';
+import { Marketplaces, Categories } from '../types';
 
 import axios from 'axios';
 
-const REACT_APP_API_URL = String(import.meta.env.VITE_APP_API_URL);
-
-const ax = axios.create({ baseURL: REACT_APP_API_URL });
+const axiosInstance = axios.create({ baseURL: String(import.meta.env.VITE_APP_API_URL) });
 
 class Requests {
-	public static async getProductsByCategory(category: Categories, company: Companies):
-    Promise<IProduct[]> {
+	public static async getProductsByCategory(cgy: Categories, mkt: Marketplaces):
+	Promise<IProduct[]> {
 		try {
-			const url = `${REACT_APP_API_URL}/${category}?company=${company}`;
-			return (await ax.get(url)).data;
+			const route = `/${cgy}?marketplace=${mkt}`;
+			return (await axiosInstance.get(route)).data;
 		} catch (_) { return []; }
 	}
 
-	public static async getProductsBySearch(search: string, company: Companies):
+	public static async getProductsBySearch(sch: string, mkt: Marketplaces):
     Promise<IProduct[]> {
 		try {
-			const url = `${REACT_APP_API_URL}/search?q=${
-				encodeURI(search.trim().toLowerCase())}&company=${company}`;
-			return (await ax.get(url)).data;
+			const search = encodeURI(sch.trim().toLowerCase());
+			const route = `/search?q=${search}&marketplace=${mkt}`;
+			return (await axiosInstance.get(route)).data;
 		} catch (_) { return []; }
 	}
 }

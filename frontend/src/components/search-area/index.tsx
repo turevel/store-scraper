@@ -10,16 +10,19 @@ import ThemeSwitcher from '../theme-switcher';
 import { useContext } from 'react';
 
 function SearchArea() {
-	const { loading, data } = useContext(RequestContext);
+	const { loading, products } = useContext(RequestContext);
 
 	return (
-		<sc.Container style={ { height: loading || data.length > 0 ? '160px' : '65vh' } }>
+		<sc.Container
+			style={ { height: loading || products.length > 0 ? '160px' : '59vh' } }
+		>
 			<Logo />
 			<ThemeSwitcher />
-			<sc.SearchContainer>
+
+			<sc.SearchArea>
 				<Search />
 				<FilteredSearch />
-			</sc.SearchContainer>
+			</sc.SearchArea>
 		</sc.Container>
 	);
 }

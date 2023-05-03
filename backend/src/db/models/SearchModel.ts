@@ -1,4 +1,4 @@
-import IProduct from '../../interfaces/IProducts';
+import IProduct from '../../interfaces/IProduct';
 
 import { Schema, model } from 'mongoose';
 

@@ -29,7 +29,9 @@ Para usar a aplicação com o NodeJS, certifique-se se adicionar o arquivo `.env
 
 Na raiz do projeto execute o comando `npm run requirements` para instalar todas as dependências do projeto.
 
-Em uma aba do terminal digite o comando `backend:start` para iniciar o serviço de backend. Para iniciar o frontend, digite o comando (em uma nova aba) `frontend:start`.
+Em uma aba do terminal digite o comando `npm run backend:start` para iniciar o serviço de backend. Para iniciar o frontend, digite o comando (em uma nova aba) `npm run frontend:start`.
+
+Quando ambos os serviços estivem em execução, abra seu navegador na porta `http://localhost:3000` para ver a aplicação rodando.
 
 ### Uso com o Docker
 
@@ -39,8 +41,8 @@ Inicie a aplicação usando o `docker compose` com o comando: `docker compose up
 
 Para verificar o status dos serviços você pode dar os comandos:
 
-- backend: `docker logs backend -f`;
-- frontend: `docker logs frontend -f`.
+- **backend**: `docker logs backend -f`;
+- **frontend**: `docker logs frontend -f`.
 
 Quando ambos os serviços estivem em execução, abra seu navegador na porta `http://localhost:3000` para ver a aplicação rodando.
 
@@ -59,63 +61,73 @@ Para acessar a API em sua máquina tenha como base a url: `http://localhost:{API
   <tbody>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/smartphones?company=both</code></td>
-      <td>Retorna os smartphones de ambos os sites.</td>
+      <td><code>/</code></td>
+      <td>Retorna o índice de rotas da api.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/smartphones?company=meli</code></td>
-      <td>Retorna os smartphones do Mercado Livre.</td>
+      <td><code>/phones</code></td>
+      <td>Retorna celulares de ambos os sites.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/smartphones?company=buscape</code></td>
-      <td>Retorna os smartphones do Buscapé.</td>
+      <td><code>/phones?marketplace=meli</code></td>
+      <td>Retorna celulares do Mercado Livre.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/refrigerators?company=both</code></td>
-      <td>Retorna as geladeiras de ambos os sites.</td>
+      <td><code>/phones?marketplace=buscape</code></td>
+      <td>Retorna celulares do Buscapé.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/refrigerators?company=meli</code></td>
-      <td>Retorna as geladeiras do Mercado Livre.</td>
+      <td><code>/refrigerators</code></td>
+      <td>Retorna geladeiras de ambos os sites.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/refrigerators?company=buscape</code></td>
-      <td>Retorna as geladeiras do Buscapé.</td>
+      <td><code>/refrigerators?marketplace=meli</code></td>
+      <td>Retorna geladeiras do Mercado Livre.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/tvs?company=both</code></td>
-      <td>Retorna as tvs de ambos os sites.</td>
+      <td><code>/refrigerators?marketplace=buscape</code></td>
+      <td>Retorna geladeiras do Buscapé.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/tvs?company=meli</code></td>
-      <td>Retorna as tvs do Mercado Livre.</td>
+      <td><code>/tvs</code></td>
+      <td>Retorna tvs de ambos os sites.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/tvs?company=buscape</code></td>
-      <td>Retorna as tvs do Buscapé.</td>
+      <td><code>/tvs?marketplace=meli</code></td>
+      <td>Retorna tvs do Mercado Livre.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/search/?q={SEARCH_QUERY}&company=both</code></td>
+      <td><code>/tvs?marketplace=buscape</code></td>
+      <td>Retorna tvs do Buscapé.</td>
+    </tr>
+    <tr>
+      <td><b>GET</b></td>
+      <td><code>/search?q={SEARCH_QUERY}</code></td>
       <td>Retorna a pesquisa de ambos os sites.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/search/?q={SEARCH_QUERY}&company=meli</td>
+      <td><code>/search?q={SEARCH_QUERY}&marketplace=meli</td>
       <td>Retorna a pesquisa do Mercado Livre.</td>
     </tr>
     <tr>
       <td><b>GET</b></td>
-      <td><code>/search/?q={SEARCH_QUERY}&company=buscape</code></td>
+      <td><code>/search?q={SEARCH_QUERY}&marketplace=buscape</code></td>
       <td>Retorna a pesquisa do Buscapé.</td>
+    </tr>
+    <tr>
+      <td><b>GET</b></td>
+      <td><code>/status</code></td>
+      <td>Retorna o status de execução da api.</td>
     </tr>
   </tbody>
 </table>

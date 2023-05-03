@@ -1,5 +1,6 @@
-import { AbstractExtractor } from '../../classes';
-import IProduct from '../../interfaces/IProducts';
+import AbstractExtractor from './AbstractExtractor';
+
+import IProduct from '../../interfaces/IProduct';
 
 const MAIN_CONTENT_QUERY = '.ui-search-results.shops__search-results';
 const ITEMS_QUERY = '.ui-search-layout__item';
@@ -10,10 +11,9 @@ const ITEM_PRICE_QUERY = '.price-tag-amount';
 
 class MeliExtractor extends AbstractExtractor {
 	public static extract(content: string) {
-		MeliExtractor.loadHTML(content);
-		MeliExtractor.setContent(MAIN_CONTENT_QUERY);
+		MeliExtractor.load(content, MAIN_CONTENT_QUERY);
 
-		const items = MeliExtractor.getElements(ITEMS_QUERY);
+		const items = MeliExtractor.getProducts(ITEMS_QUERY);
 		const data: IProduct[] = [];
 
 		items.each((_, item) => {

@@ -1,4 +1,5 @@
-export { default as SmartphonesController } from './SmartphonesController';
+export { default as PhonesController } from './PhonesController';
 export { default as RefrigeratorsController } from './RefrigeratorsController';
 export { default as TvsController } from './TvsController';
-export { default as SearchController } from './SearchController';
+export { default as SearchesController } from './SearchesController';
+export { default as AbstractCategoryController } from './AbstractCategoryController';

@@ -8,7 +8,7 @@ import { useContext } from 'react';
 import { v4 } from 'uuid';
 
 function ProductsArea() {
-	const { data } = useContext(RequestContext);
+	const { products } = useContext(RequestContext);
 
 	return (
 		<sc.Container>
@@ -18,7 +18,7 @@ function ProductsArea() {
 
 			<sc.List>
 				{
-					data.map((product) => (
+					products.map((product) => (
 						<ProductCard
 							key={ v4() }
 							product={ product }

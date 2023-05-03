@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Leonardo Araújo" />
+  <meta name="description" content="Raspagem de dados de produtos do Mercado Livre e Buscapé" />
+  <meta name="keywords" content="html, css, javascript, typescript, web, scraping, web-scraping, api, app, react" />
+  <meta name="theme-color" content="#00838F" />
+  <link rel="icon" type="image/svg+xml" href="/spider.svg" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/index.css">
+  <title>Store Scraper API</title>
+</head>
+<body>
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th>Método</th>
+          <th>Rota</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="method">GET</td>
+          <td><code>/phones</code></td>
+          <td>Retorna celulares de ambos os sites.</td>
+        </tr>
+        <tr>
+          <td class="method">GET</td>
+          <td><code>/phones?marketplace=meli</code></td>
+          <td>Retorna celulares do Mercado Livre.</td>
+        </tr>
+        <tr>
+          <td class="method">GET</td>
+          <td><code>/phones?marketplace=buscape</code></td>
+          <td>Retorna celulares do Buscapé.</td>
+        </tr>
+        <tr>
+          <td class="method">GET</td>
+          <td><code>/refrigerators</code></td>
+          <td>Retorna geladeiras de ambos os sites.</td>
+        </tr>
+        <tr>
+          <td class="method">GET</td>
+          <td><code>/refrigerators?marketplace=meli</code></td>
+          <td>Retorna geladeiras do Mercado Livre.</td>
+        </tr>
+        <tr>
+          <td class="method">GET</td>
+          <td><code>/refrigerators?marketplace=buscape</code></td>
+          <td>Retorna geladeiras do Buscapé.</td>
+        </tr>
+        <tr>
+          <td class="method">GET</td>
+          <td><code>/tvs</code></td>
+          <td>Retorna tvs de ambos os sites.</td>
+        </tr>
+        <tr>
+          <td class="method">GET</td>
+          <td><code>/tvs?marketplace=meli</code></td>
+          <td>Retorna tvs do Mercado Livre.</td>
+        </tr>
+        <tr>
+          <td class="method">GET</td>
+          <td><code>/tvs?marketplace=buscape</code></td>
+          <td>Retorna tvs do Buscapé.</td>
+        </tr>
+        <tr>
+          <td class="method">GET</td>
+          <td><code>/search?q={SEARCH_QUERY}</code></td>
+          <td>Retorna a pesquisa de ambos os sites.</td>
+        </tr>
+        <tr>
+          <td class="method">GET</td>
+          <td><code>/search?q={SEARCH_QUERY}&marketplace=meli</td>
+          <td>Retorna a pesquisa do Mercado Livre.</td>
+        </tr>
+        <tr>
+          <td class="method">GET</td>
+          <td><code>/search?q={SEARCH_QUERY}&marketplace=buscape</code></td>
+          <td>Retorna a pesquisa do Buscapé.</td>
+        </tr>
+        <tr>
+          <td class="method">GET</td>
+          <td><code>/status</code></td>
+          <td>Retorna o status de execução da api.</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>
