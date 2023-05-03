@@ -21,11 +21,13 @@ O objetivo do **Store Scraper App** é automatizar o processo de coleta de dados
 
 ## Instalação
 
-Para fazer uso da aplicação é recomendado ter instalado em sua máquina o `Docker` na versão **mais recente** ou o `NodeJS` na versão **18 ou superior**.
+Para fazer uso da aplicação é recomendado ter instalado em sua máquina o `Docker` na versão **23 ou superior** ou o `NodeJS` na versão **18 ou superior**.
+
+**Você necessita estar conectado à internet!**
 
 ### Uso com NodeJS
 
-Para usar a aplicação com o NodeJS, certifique-se se adicionar o arquivo `.env` com as variáveis preenchidas tendo como exemplo o arquivo `.env.example` em ambas as pastas (backend e frontend).
+Para usar a aplicação com o `NodeJS`, certifique-se de adicionar o arquivo `.env` com as variáveis preenchidas tendo como exemplo o arquivo `.env.example` em ambas as pastas (backend e frontend).
 
 Na raiz do projeto execute o comando `npm run requirements` para instalar todas as dependências do projeto.
 
@@ -35,14 +37,14 @@ Quando ambos os serviços estivem em execução, abra seu navegador na porta `ht
 
 ### Uso com o Docker
 
-Para usar a aplicação com o Docker, adicione o arquivo `.env` na raiz do projeto com as variáveis preenchidas tendo como exemplo o arquivo `.env.example` na raiz do projeto (opcional).
+Para usar a aplicação com o `Docker`, certifique-se de adicionar o arquivo `.env` com as variáveis preenchidas tendo como exemplo o arquivo `.env.example` na pasta raiz do projeto.
 
-Inicie a aplicação usando o `docker compose` com o comando: `docker compose up -d`.
+Na pasta raiz do projeto, inicie a aplicação usando o `docker compose` com o comando: `docker compose up -d`.
 
 Para verificar o status dos serviços você pode dar os comandos:
 
-- **backend**: `docker logs backend -f`;
-- **frontend**: `docker logs frontend -f`.
+- **backend**: `docker logs store-scraper-api -f`;
+- **frontend**: `docker logs store-scraper -f`.
 
 Quando ambos os serviços estivem em execução, abra seu navegador na porta `http://localhost:3000` para ver a aplicação rodando.
 
