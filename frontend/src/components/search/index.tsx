@@ -4,6 +4,7 @@ import { RequestContext } from '../../provider/RequestProvider';
 
 import { useContext } from 'react';
 import { BiSearch } from 'react-icons/bi';
+import { MdOutlineClear } from 'react-icons/md';
 
 function Search() {
 	const {
@@ -21,6 +22,14 @@ function Search() {
 				type="input"
 				value={ search }
 			/>
+
+			<sc.Clear
+				data-active={ search.trim() !== '' }
+				onClick={ (e) => { e.preventDefault(); setSearch('') } }
+				title="Limpar"
+			>
+				<MdOutlineClear />
+			</sc.Clear>
 
 			<sc.Submit
 				disabled={ loading }
