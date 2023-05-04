@@ -6,9 +6,9 @@ import { useContext } from 'react';
 import { FaSpider } from 'react-icons/fa';
 
 const LOGO_INITIAL_STYLE = {
+	bottom: '125px',
 	fontSize: '2.25rem',
 	left: '50%',
-	top: 'calc(65vh - 205px)',
 	transform: 'translateX(-50%)'
 };
 

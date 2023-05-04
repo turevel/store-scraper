@@ -6,6 +6,7 @@ export const Form = styled.form`
   box-shadow: 0 0 10px rgba(0 0 0 / 12%);
   display: flex;
   overflow: hidden;
+  position: relative;
   width: 100%;
 `;
 
@@ -13,8 +14,29 @@ export const Input = styled.input`
   background-color: ${({ theme }) => theme.colors.secondary};
   color: ${({ theme }) => theme.colors.font};
   height: 40px;
-  padding-inline: 14px;
+  padding-left: 14px;
+  padding-right: 38px;
   width: calc(100% - 60px);
+`;
+
+export const Clear = styled.button`
+  background-color: transparent;
+  border-radius: 50%;
+  color: ${({ theme }) => `${theme.colors.font}a6`};
+  display: none;
+  height: 32px;
+  place-items: center;
+  position: absolute;
+  right: 64px;
+  width: 32px;
+
+  &[data-active=true] {
+    display: grid;
+  }
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.quaternary};
+  }
 `;
 
 export const Submit = styled.button`

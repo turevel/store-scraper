@@ -2,38 +2,38 @@ import * as sc from './styles';
 
 import { AppContext } from '../../provider/AppProvider';
 
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { BiMoon, BiSun } from 'react-icons/bi';
 import { FiSettings } from 'react-icons/fi';
 
 function ThemeSwitcher() {
 	const { theme, changeTheme } = useContext(AppContext);
+	const [expand, setExpand] = useState(false);
 
 	return (
-		<sc.Container>
-			<sc.SettingsLabel htmlFor="switch-expand" title="Configurações">
-				<input id="switch-expand" type="checkbox" />
+		<sc.Container data-expand={ expand }>
+			<sc.Settings
+				onClick={ () => setExpand((prev) => !prev) }
+				title="Configurações"
+				type="button"
+			>
 				<FiSettings className="icon" />
-			</sc.SettingsLabel>
+			</sc.Settings>
 
-			<sc.ThemesContainer>
-				<label htmlFor="theme" title="Alternar tema">
-					<input
-						id="theme"
-						type="checkbox"
-						checked={ theme === 'light' }
-						onChange={ changeTheme }
-					/>
+			<sc.Switcher
+				data-lights-on={ theme === 'light' }
+				onClick={ changeTheme }
+				title="Alternar tema"
+				type="button"
+			>
+				<BiMoon className="icon" />
 
-					<BiMoon className="icon" />
+				<sc.Slider>
+					<sc.SliderThumb />
+				</sc.Slider>
 
-					<span className="slider">
-						<span className="slider-thumb" />
-					</span>
-
-					<BiSun className="icon" />
-				</label>
-			</sc.ThemesContainer>
+				<BiSun className="icon" />
+			</sc.Switcher>
 		</sc.Container>
 	);
 }
