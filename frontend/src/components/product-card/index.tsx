@@ -6,7 +6,7 @@ function ProductCard({ product }: { product: IProduct; }) {
 	return (
 		<sc.Card>
 			<sc.ImageContainer>
-				<sc.Image src={ product.image } />
+				<sc.Image src={ product.image } alt={`Imagem: ${product.title}`} />
 			</sc.ImageContainer>
 
 			<sc.Title className="title">
