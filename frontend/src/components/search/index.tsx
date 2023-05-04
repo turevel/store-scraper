@@ -25,7 +25,7 @@ function Search() {
 
 			<sc.Clear
 				data-active={ search.trim() !== '' }
-				onClick={ (e) => { e.preventDefault(); setSearch('') } }
+				onClick={ (e) => { e.preventDefault(); setSearch(''); } }
 				title="Limpar"
 			>
 				<MdOutlineClear />
