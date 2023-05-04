@@ -27,6 +27,7 @@ function Search() {
 				data-active={ search.trim() !== '' }
 				onClick={ (e) => { e.preventDefault(); setSearch(''); } }
 				title="Limpar"
+				type="button"
 			>
 				<MdOutlineClear />
 			</sc.Clear>
